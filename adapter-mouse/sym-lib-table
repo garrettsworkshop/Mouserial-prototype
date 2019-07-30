@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name StandardParts)(type Legacy)(uri "$(KIPRJMOD)/../../stdparts/stdparts.lib")(options "")(descr ""))
+)
