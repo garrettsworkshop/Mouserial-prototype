@@ -1,0 +1,747 @@
+Fitter report for Mouserial
+Sat Sep 07 20:44:29 2019
+Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Fitter Summary
+  3. Fitter Settings
+  4. Pin-Out File
+  5. Fitter Resource Usage Summary
+  6. Input Pins
+  7. Output Pins
+  8. Bidir Pins
+  9. All Package Pins
+ 10. I/O Standard
+ 11. Dedicated Inputs I/O
+ 12. Output Pin Default Load For Reported TCO
+ 13. Fitter Resource Utilization by Entity
+ 14. Control Signals
+ 15. Global & Other Fast Signals
+ 16. Non-Global High Fan-Out Signals
+ 17. Other Routing Usage Summary
+ 18. LAB External Interconnect
+ 19. LAB Macrocells
+ 20. Parallel Expander
+ 21. Shareable Expander
+ 22. Logic Cell Interconnection
+ 23. Fitter Device Options
+ 24. Fitter Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------+
+; Fitter Summary                                                              ;
++---------------------------+-------------------------------------------------+
+; Fitter Status             ; Successful - Sat Sep 07 20:44:29 2019           ;
+; Quartus II 32-bit Version ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name             ; Mouserial                                       ;
+; Top-level Entity Name     ; Mouserial                                       ;
+; Family                    ; MAX7000S                                        ;
+; Device                    ; EPM7128SLC84-15                                 ;
+; Timing Models             ; Final                                           ;
+; Total macrocells          ; 104 / 128 ( 81 % )                              ;
+; Total pins                ; 67 / 68 ( 99 % )                                ;
++---------------------------+-------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Fitter Settings                                                                                                    ;
++----------------------------------------------------------------------------+-----------------------+---------------+
+; Option                                                                     ; Setting               ; Default Value ;
++----------------------------------------------------------------------------+-----------------------+---------------+
+; Device                                                                     ; EPM7128SLC84-15       ;               ;
+; Optimize Timing for ECOs                                                   ; On                    ; Off           ;
+; Regenerate full fit report during ECO compiles                             ; On                    ; Off           ;
+; Optimize IOC Register Placement for Timing                                 ; Pack All IO Registers ; Normal        ;
+; Slow Slew Rate                                                             ; On                    ; Off           ;
+; Fitter Effort                                                              ; Standard Fit          ; Auto Fit      ;
+; Use smart compilation                                                      ; Off                   ; Off           ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                    ; On            ;
+; Enable compact report table                                                ; Off                   ; Off           ;
+; Optimize Multi-Corner Timing                                               ; Off                   ; Off           ;
+; Fitter Initial Placement Seed                                              ; 1                     ; 1             ;
+; Force Fitter to Avoid Periphery Placement Warnings                         ; Off                   ; Off           ;
++----------------------------------------------------------------------------+-----------------------+---------------+
+
+
++--------------+
+; Pin-Out File ;
++--------------+
+The pin-out file can be found in Z:/Repos/Mouserial/cpld/output_files/Mouserial.pin.
+
+
++---------------------------------------------------+
+; Fitter Resource Usage Summary                     ;
++------------------------------+--------------------+
+; Resource                     ; Usage              ;
++------------------------------+--------------------+
+; Logic cells                  ; 104 / 128 ( 81 % ) ;
+; Registers                    ; 68 / 128 ( 53 % )  ;
+; Number of pterms used        ; 259                ;
+; I/O pins                     ; 67 / 68 ( 99 % )   ;
+;     -- Clock pins            ; 2 / 2 ( 100 % )    ;
+;     -- Dedicated input pins  ; 2 / 2 ( 100 % )    ;
+;                              ;                    ;
+; Global signals               ; 2                  ;
+; Shareable expanders          ; 4 / 128 ( 3 % )    ;
+; Parallel expanders           ; 1 / 120 ( < 1 % )  ;
+; Cells using turbo bit        ; 19 / 128 ( 15 % )  ;
+; Maximum fan-out              ; 66                 ;
+; Highest non-global fan-out   ; 19                 ;
+; Total fan-out                ; 692                ;
+; Average fan-out              ; 3.95               ;
++------------------------------+--------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Input Pins                                                                                                                                    ;
++---------+-------+----------+-----+-----------------------+--------------------+--------+----------------+--------------+----------------------+
+; Name    ; Pin # ; I/O Bank ; LAB ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; I/O Standard ; Location assigned by ;
++---------+-------+----------+-----+-----------------------+--------------------+--------+----------------+--------------+----------------------+
+; A[0]    ; 75    ; --       ; 8   ; 14                    ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; A[10]   ; 10    ; --       ; 1   ; 2                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; A[11]   ; 11    ; --       ; 1   ; 1                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; A[12]   ; 52    ; --       ; 5   ; 1                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; A[13]   ; 51    ; --       ; 5   ; 1                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; A[14]   ; 50    ; --       ; 5   ; 1                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; A[15]   ; 39    ; --       ; 4   ; 1                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; A[1]    ; 76    ; --       ; 8   ; 14                    ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; A[2]    ; 77    ; --       ; 8   ; 14                    ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; A[3]    ; 79    ; --       ; 8   ; 14                    ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; A[4]    ; 80    ; --       ; 8   ; 2                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; A[5]    ; 4     ; --       ; 1   ; 2                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; A[6]    ; 5     ; --       ; 1   ; 2                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; A[7]    ; 6     ; --       ; 1   ; 2                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; A[8]    ; 8     ; --       ; 1   ; 2                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; A[9]    ; 9     ; --       ; 1   ; 2                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; C7M     ; 2     ; --       ; --  ; 65                    ; 0                  ; yes    ; no             ; TTL          ; User                 ;
+; MISO    ; 36    ; --       ; 4   ; 0                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; MOSI    ; 37    ; --       ; 4   ; 0                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; PHI0in  ; 83    ; --       ; --  ; 3                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; Q3      ; 84    ; --       ; --  ; 1                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; SCK     ; 35    ; --       ; 4   ; 0                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; Vbl0    ; 48    ; --       ; 5   ; 2                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; Vbl1    ; 41    ; --       ; 4   ; 1                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; nDEVSEL ; 15    ; --       ; 2   ; 6                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; nIOSEL  ; 74    ; --       ; 8   ; 2                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; nIOSTRB ; 17    ; --       ; 2   ; 7                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; nKMode  ; 40    ; --       ; 4   ; 1                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; nRALE   ; 44    ; --       ; 5   ; 4                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; nRES    ; 1     ; --       ; --  ; 66                    ; 0                  ; yes    ; no             ; TTL          ; User                 ;
+; nRRD    ; 45    ; --       ; 5   ; 10                    ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; nRWR    ; 46    ; --       ; 5   ; 4                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; nSS     ; 20    ; --       ; 2   ; 0                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
+; nWE     ; 12    ; --       ; 1   ; 8                     ; 0                  ; no     ; no             ; TTL          ; User                 ;
++---------+-------+----------+-----+-----------------------+--------------------+--------+----------------+--------------+----------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Output Pins                                                                                                                                                                                  ;
++----------+-------+----------+-----+-----------------+----------------+------------+---------------+--------------+----------------------+-------+----------------------+---------------------+
+; Name     ; Pin # ; I/O Bank ; LAB ; Output Register ; Slow Slew Rate ; Open Drain ; TRI Primitive ; I/O Standard ; Location assigned by ; Load  ; Output Enable Source ; Output Enable Group ;
++----------+-------+----------+-----+-----------------+----------------+------------+---------------+--------------+----------------------+-------+----------------------+---------------------+
+; ROMA[11] ; 68    ; --       ; 7   ; no              ; yes            ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; ROMA[12] ; 56    ; --       ; 6   ; no              ; yes            ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; ROMA[13] ; 57    ; --       ; 6   ; no              ; yes            ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; ROMA[14] ; 55    ; --       ; 6   ; no              ; yes            ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; ROMA[15] ; 54    ; --       ; 6   ; no              ; yes            ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; Rclk     ; 21    ; --       ; 2   ; no              ; yes            ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; T0       ; 49    ; --       ; 5   ; no              ; yes            ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; nINH     ; 81    ; --       ; 8   ; no              ; yes            ; yes        ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; nIRQ     ; 18    ; --       ; 2   ; no              ; yes            ; yes        ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; nRCS     ; 70    ; --       ; 7   ; no              ; yes            ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; nRIRQ    ; 33    ; --       ; 4   ; no              ; yes            ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
+; nROE     ; 67    ; --       ; 7   ; no              ; yes            ; no         ; no            ; TTL          ; User                 ; 10 pF ; -                    ; -                   ;
++----------+-------+----------+-----+-----------------+----------------+------------+---------------+--------------+----------------------+-------+----------------------+---------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Bidir Pins                                                                                                                                                                                                                                         ;
++--------+-------+----------+-----+-----------------------+--------------------+--------+----------------+-----------------+----------------+------------+--------------+----------------------+-------+-----------------------+---------------------+
+; Name   ; Pin # ; I/O Bank ; LAB ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Output Register ; Slow Slew Rate ; Open Drain ; I/O Standard ; Location assigned by ; Load  ; Output Enable Source  ; Output Enable Group ;
++--------+-------+----------+-----+-----------------------+--------------------+--------+----------------+-----------------+----------------+------------+--------------+----------------------+-------+-----------------------+---------------------+
+; D[0]   ; 58    ; --       ; 6   ; 5                     ; 0                  ; no     ; no             ; no              ; yes            ; no         ; TTL          ; User                 ; 10 pF ; DOE~6                 ; -                   ;
+; D[1]   ; 60    ; --       ; 6   ; 5                     ; 0                  ; no     ; no             ; no              ; yes            ; no         ; TTL          ; User                 ; 10 pF ; DOE~6                 ; -                   ;
+; D[2]   ; 61    ; --       ; 6   ; 4                     ; 0                  ; no     ; no             ; no              ; yes            ; no         ; TTL          ; User                 ; 10 pF ; DOE~6                 ; -                   ;
+; D[3]   ; 63    ; --       ; 7   ; 4                     ; 0                  ; no     ; no             ; no              ; yes            ; no         ; TTL          ; User                 ; 10 pF ; DOE~6                 ; -                   ;
+; D[4]   ; 64    ; --       ; 7   ; 4                     ; 0                  ; no     ; no             ; no              ; yes            ; no         ; TTL          ; User                 ; 10 pF ; DOE~6                 ; -                   ;
+; D[5]   ; 65    ; --       ; 7   ; 3                     ; 0                  ; no     ; no             ; no              ; yes            ; no         ; TTL          ; User                 ; 10 pF ; DOE~6                 ; -                   ;
+; D[6]   ; 69    ; --       ; 7   ; 3                     ; 0                  ; no     ; no             ; no              ; yes            ; no         ; TTL          ; User                 ; 10 pF ; DOE~6                 ; -                   ;
+; D[7]   ; 73    ; --       ; 8   ; 3                     ; 0                  ; no     ; no             ; no              ; yes            ; no         ; TTL          ; User                 ; 10 pF ; DOE~6                 ; -                   ;
+; RAD[0] ; 22    ; --       ; 2   ; 5                     ; 0                  ; no     ; no             ; no              ; yes            ; no         ; TTL          ; User                 ; 10 pF ; nRRD~0 (inverted)     ; -                   ;
+; RAD[1] ; 24    ; --       ; 3   ; 5                     ; 0                  ; no     ; no             ; no              ; yes            ; no         ; TTL          ; User                 ; 10 pF ; nRRD~0 (inverted)     ; -                   ;
+; RAD[2] ; 25    ; --       ; 3   ; 4                     ; 0                  ; no     ; no             ; no              ; yes            ; no         ; TTL          ; User                 ; 10 pF ; nRRD~0 (inverted)     ; -                   ;
+; RAD[3] ; 27    ; --       ; 3   ; 4                     ; 0                  ; no     ; no             ; no              ; yes            ; no         ; TTL          ; User                 ; 10 pF ; nRRD~0 (inverted)     ; -                   ;
+; RAD[4] ; 28    ; --       ; 3   ; 3                     ; 0                  ; no     ; no             ; no              ; yes            ; no         ; TTL          ; User                 ; 10 pF ; nRRD~0 (inverted)     ; -                   ;
+; RAD[5] ; 29    ; --       ; 3   ; 3                     ; 0                  ; no     ; no             ; no              ; yes            ; no         ; TTL          ; User                 ; 10 pF ; nRRD~0 (inverted)     ; -                   ;
+; RAD[6] ; 30    ; --       ; 3   ; 3                     ; 0                  ; no     ; no             ; no              ; yes            ; no         ; TTL          ; User                 ; 10 pF ; nRRD~0 (inverted)     ; -                   ;
+; RAD[7] ; 31    ; --       ; 3   ; 3                     ; 0                  ; no     ; no             ; no              ; yes            ; no         ; TTL          ; User                 ; 10 pF ; nRRD~0 (inverted)     ; -                   ;
+; nRRST  ; 34    ; --       ; 4   ; 0                     ; 0                  ; no     ; no             ; no              ; yes            ; yes        ; TTL          ; User                 ; 10 pF ; nRRSTreg~1 (inverted) ; -                   ;
++--------+-------+----------+-----+-----------------------+--------------------+--------+----------------+-----------------+----------------+------------+--------------+----------------------+-------+-----------------------+---------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; All Package Pins                                                                                      ;
++----------+------------+----------+----------------+--------+--------------+---------+-----------------+
+; Location ; Pad Number ; I/O Bank ; Pin Name/Usage ; Dir.   ; I/O Standard ; Voltage ; User Assignment ;
++----------+------------+----------+----------------+--------+--------------+---------+-----------------+
+; 1        ; 0          ; --       ; nRES           ; input  ; TTL          ;         ; Y               ;
+; 2        ; 1          ; --       ; C7M            ; input  ; TTL          ;         ; Y               ;
+; 3        ; 2          ; --       ; VCCINT         ; power  ;              ; 5.0V    ;                 ;
+; 4        ; 3          ; --       ; A[5]           ; input  ; TTL          ;         ; Y               ;
+; 5        ; 4          ; --       ; A[6]           ; input  ; TTL          ;         ; Y               ;
+; 6        ; 5          ; --       ; A[7]           ; input  ; TTL          ;         ; Y               ;
+; 7        ; 6          ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 8        ; 7          ; --       ; A[8]           ; input  ; TTL          ;         ; Y               ;
+; 9        ; 8          ; --       ; A[9]           ; input  ; TTL          ;         ; Y               ;
+; 10       ; 9          ; --       ; A[10]          ; input  ; TTL          ;         ; Y               ;
+; 11       ; 10         ; --       ; A[11]          ; input  ; TTL          ;         ; Y               ;
+; 12       ; 11         ; --       ; nWE            ; input  ; TTL          ;         ; Y               ;
+; 13       ; 12         ; --       ; VCCIO          ; power  ;              ; 5.0V    ;                 ;
+; 14       ; 13         ; --       ; TDI            ; input  ; TTL          ;         ; N               ;
+; 15       ; 14         ; --       ; nDEVSEL        ; input  ; TTL          ;         ; Y               ;
+; 16       ; 15         ; --       ; RESERVED_INPUT ;        ;              ;         ;                 ;
+; 17       ; 16         ; --       ; nIOSTRB        ; input  ; TTL          ;         ; Y               ;
+; 18       ; 17         ; --       ; nIRQ           ; output ; TTL          ;         ; Y               ;
+; 19       ; 18         ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 20       ; 19         ; --       ; nSS            ; input  ; TTL          ;         ; Y               ;
+; 21       ; 20         ; --       ; Rclk           ; output ; TTL          ;         ; Y               ;
+; 22       ; 21         ; --       ; RAD[0]         ; bidir  ; TTL          ;         ; Y               ;
+; 23       ; 22         ; --       ; TMS            ; input  ; TTL          ;         ; N               ;
+; 24       ; 23         ; --       ; RAD[1]         ; bidir  ; TTL          ;         ; Y               ;
+; 25       ; 24         ; --       ; RAD[2]         ; bidir  ; TTL          ;         ; Y               ;
+; 26       ; 25         ; --       ; VCCIO          ; power  ;              ; 5.0V    ;                 ;
+; 27       ; 26         ; --       ; RAD[3]         ; bidir  ; TTL          ;         ; Y               ;
+; 28       ; 27         ; --       ; RAD[4]         ; bidir  ; TTL          ;         ; Y               ;
+; 29       ; 28         ; --       ; RAD[5]         ; bidir  ; TTL          ;         ; Y               ;
+; 30       ; 29         ; --       ; RAD[6]         ; bidir  ; TTL          ;         ; Y               ;
+; 31       ; 30         ; --       ; RAD[7]         ; bidir  ; TTL          ;         ; Y               ;
+; 32       ; 31         ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 33       ; 32         ; --       ; nRIRQ          ; output ; TTL          ;         ; Y               ;
+; 34       ; 33         ; --       ; nRRST          ; bidir  ; TTL          ;         ; Y               ;
+; 35       ; 34         ; --       ; SCK            ; input  ; TTL          ;         ; Y               ;
+; 36       ; 35         ; --       ; MISO           ; input  ; TTL          ;         ; Y               ;
+; 37       ; 36         ; --       ; MOSI           ; input  ; TTL          ;         ; Y               ;
+; 38       ; 37         ; --       ; VCCIO          ; power  ;              ; 5.0V    ;                 ;
+; 39       ; 38         ; --       ; A[15]          ; input  ; TTL          ;         ; Y               ;
+; 40       ; 39         ; --       ; nKMode         ; input  ; TTL          ;         ; Y               ;
+; 41       ; 40         ; --       ; Vbl1           ; input  ; TTL          ;         ; Y               ;
+; 42       ; 41         ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 43       ; 42         ; --       ; VCCINT         ; power  ;              ; 5.0V    ;                 ;
+; 44       ; 43         ; --       ; nRALE          ; input  ; TTL          ;         ; Y               ;
+; 45       ; 44         ; --       ; nRRD           ; input  ; TTL          ;         ; Y               ;
+; 46       ; 45         ; --       ; nRWR           ; input  ; TTL          ;         ; Y               ;
+; 47       ; 46         ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 48       ; 47         ; --       ; Vbl0           ; input  ; TTL          ;         ; Y               ;
+; 49       ; 48         ; --       ; T0             ; output ; TTL          ;         ; Y               ;
+; 50       ; 49         ; --       ; A[14]          ; input  ; TTL          ;         ; Y               ;
+; 51       ; 50         ; --       ; A[13]          ; input  ; TTL          ;         ; Y               ;
+; 52       ; 51         ; --       ; A[12]          ; input  ; TTL          ;         ; Y               ;
+; 53       ; 52         ; --       ; VCCIO          ; power  ;              ; 5.0V    ;                 ;
+; 54       ; 53         ; --       ; ROMA[15]       ; output ; TTL          ;         ; Y               ;
+; 55       ; 54         ; --       ; ROMA[14]       ; output ; TTL          ;         ; Y               ;
+; 56       ; 55         ; --       ; ROMA[12]       ; output ; TTL          ;         ; Y               ;
+; 57       ; 56         ; --       ; ROMA[13]       ; output ; TTL          ;         ; Y               ;
+; 58       ; 57         ; --       ; D[0]           ; bidir  ; TTL          ;         ; Y               ;
+; 59       ; 58         ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 60       ; 59         ; --       ; D[1]           ; bidir  ; TTL          ;         ; Y               ;
+; 61       ; 60         ; --       ; D[2]           ; bidir  ; TTL          ;         ; Y               ;
+; 62       ; 61         ; --       ; TCK            ; input  ; TTL          ;         ; N               ;
+; 63       ; 62         ; --       ; D[3]           ; bidir  ; TTL          ;         ; Y               ;
+; 64       ; 63         ; --       ; D[4]           ; bidir  ; TTL          ;         ; Y               ;
+; 65       ; 64         ; --       ; D[5]           ; bidir  ; TTL          ;         ; Y               ;
+; 66       ; 65         ; --       ; VCCIO          ; power  ;              ; 5.0V    ;                 ;
+; 67       ; 66         ; --       ; nROE           ; output ; TTL          ;         ; Y               ;
+; 68       ; 67         ; --       ; ROMA[11]       ; output ; TTL          ;         ; Y               ;
+; 69       ; 68         ; --       ; D[6]           ; bidir  ; TTL          ;         ; Y               ;
+; 70       ; 69         ; --       ; nRCS           ; output ; TTL          ;         ; Y               ;
+; 71       ; 70         ; --       ; TDO            ; output ; TTL          ;         ; N               ;
+; 72       ; 71         ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 73       ; 72         ; --       ; D[7]           ; bidir  ; TTL          ;         ; Y               ;
+; 74       ; 73         ; --       ; nIOSEL         ; input  ; TTL          ;         ; Y               ;
+; 75       ; 74         ; --       ; A[0]           ; input  ; TTL          ;         ; Y               ;
+; 76       ; 75         ; --       ; A[1]           ; input  ; TTL          ;         ; Y               ;
+; 77       ; 76         ; --       ; A[2]           ; input  ; TTL          ;         ; Y               ;
+; 78       ; 77         ; --       ; VCCIO          ; power  ;              ; 5.0V    ;                 ;
+; 79       ; 78         ; --       ; A[3]           ; input  ; TTL          ;         ; Y               ;
+; 80       ; 79         ; --       ; A[4]           ; input  ; TTL          ;         ; Y               ;
+; 81       ; 80         ; --       ; nINH           ; output ; TTL          ;         ; Y               ;
+; 82       ; 81         ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 83       ; 82         ; --       ; PHI0in         ; input  ; TTL          ;         ; Y               ;
+; 84       ; 83         ; --       ; Q3             ; input  ; TTL          ;         ; Y               ;
++----------+------------+----------+----------------+--------+--------------+---------+-----------------+
+Note: Pin directions (input, output or bidir) are based on device operating in user mode.
+
+
++--------------------------------------------------------------------------------------------------+
+; I/O Standard                                                                                     ;
++--------------+------------+----------------------+-------------------+-------------------+-------+
+; I/O Standard ; Input Vref ; Dedicated Input Pins ; Pins in I/O Bank1 ; Pins in I/O Bank2 ; Total ;
++--------------+------------+----------------------+-------------------+-------------------+-------+
+; TTL          ; -          ; 4                    ; 0                 ; 0                 ; 4     ;
++--------------+------------+----------------------+-------------------+-------------------+-------+
+
+
++----------------------------------------------------------------------+
+; Dedicated Inputs I/O                                                 ;
++--------+-------+-------+-------+--------------+------------+---------+
+; Name   ; Pin # ; Type  ; VCCIO ; I/O Standard ; Input Vref ; Current ;
++--------+-------+-------+-------+--------------+------------+---------+
+; C7M    ; 2     ; Input ; --    ; TTL          ; -          ; 0 mA    ;
+; PHI0in ; 83    ; Input ; --    ; TTL          ; -          ; 0 mA    ;
+; Q3     ; 84    ; Input ; --    ; TTL          ; -          ; 0 mA    ;
+; nRES   ; 1     ; Input ; --    ; TTL          ; -          ; 0 mA    ;
++--------+-------+-------+-------+--------------+------------+---------+
+
+
++-----------------------------------------------+
+; Output Pin Default Load For Reported TCO      ;
++--------------+-------+------------------------+
+; I/O Standard ; Load  ; Termination Resistance ;
++--------------+-------+------------------------+
+; 3.3-V LVTTL  ; 10 pF ; Not Available          ;
+; 3.3-V LVCMOS ; 10 pF ; Not Available          ;
+; TTL          ; 10 pF ; Not Available          ;
++--------------+-------+------------------------+
+Note: User assignments will override these defaults. The user specified values are listed in the Output Pins and Bidir Pins tables.
+
+
++-------------------------------------------------------------------------------------+
+; Fitter Resource Utilization by Entity                                               ;
++----------------------------+------------+------+---------------------+--------------+
+; Compilation Hierarchy Node ; Macrocells ; Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+------------+------+---------------------+--------------+
+; |Mouserial                 ; 104        ; 67   ; |Mouserial          ; work         ;
++----------------------------+------------+------+---------------------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                     ;
++--------------+----------+---------+--------------+--------+----------------------+------------------+
+; Name         ; Location ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ;
++--------------+----------+---------+--------------+--------+----------------------+------------------+
+; ABankWR_MC   ; LC114    ; 5       ; Clock enable ; no     ; --                   ; --               ;
+; AStatWR_MC   ; LC113    ; 2       ; Clock enable ; no     ; --                   ; --               ;
+; C7M          ; PIN_2    ; 65      ; Clock        ; yes    ; On                   ; --               ;
+; PHI1b9_MC    ; LC118    ; 5       ; Clock enable ; no     ; --                   ; --               ;
+; RKeyWR_MC    ; LC26     ; 8       ; Clock enable ; no     ; --                   ; --               ;
+; RStatusWR_MC ; LC18     ; 2       ; Clock enable ; no     ; --                   ; --               ;
+; S[0]         ; LC81     ; 18      ; Clock enable ; no     ; --                   ; --               ;
+; S[1]         ; LC96     ; 18      ; Clock enable ; no     ; --                   ; --               ;
+; S[2]         ; LC89     ; 19      ; Clock enable ; no     ; --                   ; --               ;
+; nRALE        ; PIN_44   ; 4       ; Clock        ; no     ; --                   ; --               ;
+; nRES         ; PIN_1    ; 66      ; Async. clear ; yes    ; On                   ; --               ;
+; nRES         ; PIN_1    ; 66      ; Clock enable ; no     ; --                   ; --               ;
+; nRRD         ; PIN_45   ; 10      ; Clock enable ; no     ; --                   ; --               ;
++--------------+----------+---------+--------------+--------+----------------------+------------------+
+
+
++---------------------------------------------------------------------+
+; Global & Other Fast Signals                                         ;
++------+----------+---------+----------------------+------------------+
+; Name ; Location ; Fan-Out ; Global Resource Used ; Global Line Name ;
++------+----------+---------+----------------------+------------------+
+; C7M  ; PIN_2    ; 65      ; On                   ; --               ;
+; nRES ; PIN_1    ; 66      ; On                   ; --               ;
++------+----------+---------+----------------------+------------------+
+
+
++---------------------------------+
+; Non-Global High Fan-Out Signals ;
++---------------+-----------------+
+; Name          ; Fan-Out         ;
++---------------+-----------------+
+; S[2]          ; 19              ;
+; S[0]          ; 18              ;
+; S[1]          ; 18              ;
+; RAreg[0]      ; 17              ;
+; RAreg[3]      ; 17              ;
+; RAreg[2]      ; 17              ;
+; RAreg[1]      ; 17              ;
+; A[3]          ; 14              ;
+; A[2]          ; 14              ;
+; A[1]          ; 14              ;
+; A[0]          ; 14              ;
+; nRRD          ; 10              ;
+; AKeySEL_MC    ; 10              ;
+; nRRD~0        ; 8               ;
+; nWE           ; 8               ;
+; RCmdWR_MC     ; 8               ;
+; RKeyWR_MC     ; 8               ;
+; RDataHWR_MC   ; 8               ;
+; ACmdWR_MC     ; 8               ;
+; ADataLWR_MC   ; 8               ;
+; ADataHWR_MC   ; 8               ;
+; RDataLWR_MC   ; 8               ;
+; DOE~6         ; 8               ;
+; nIOSTRB       ; 7               ;
+; Equal12~2sexp ; 7               ;
+; nDEVSEL       ; 6               ;
+; Equal14~3sexp ; 6               ;
+; RAD[1]~1      ; 5               ;
+; RAD[0]~0      ; 5               ;
+; D[1]~1        ; 5               ;
+; D[0]~0        ; 5               ;
+; Bank[0]       ; 5               ;
+; ABankWR_MC    ; 5               ;
+; PHI1b9_MC     ; 5               ;
+; RAD[3]~3      ; 4               ;
+; RAD[2]~2      ; 4               ;
+; D[4]~4        ; 4               ;
+; D[3]~3        ; 4               ;
+; D[2]~2        ; 4               ;
+; nRWR          ; 4               ;
+; nRALE         ; 4               ;
+; Bank[1]       ; 4               ;
+; D[6]~6        ; 3               ;
+; D[5]~5        ; 3               ;
+; RAD[7]~7      ; 3               ;
+; RAD[6]~6      ; 3               ;
+; RAD[5]~5      ; 3               ;
+; RAD[4]~4      ; 3               ;
+; D[7]~7        ; 3               ;
+; PHI0in        ; 3               ;
+; Dout[6]       ; 3               ;
+; CmdPending    ; 3               ;
+; Data[8]       ; 3               ;
+; Data[9]       ; 3               ;
+; Data[11]      ; 3               ;
+; Data[12]      ; 3               ;
+; Data[15]      ; 3               ;
+; Data[13]      ; 3               ;
+; Data[14]      ; 3               ;
+; Bank[2]       ; 3               ;
+; Data[0]       ; 3               ;
+; Data[1]       ; 3               ;
+; Data[2]       ; 3               ;
+; Data[3]       ; 3               ;
+; Data[4]       ; 3               ;
+; Data[5]       ; 3               ;
+; Data[6]       ; 3               ;
+; Data[7]       ; 3               ;
+; Data[10]      ; 3               ;
+; PHI0seen      ; 3               ;
+; PHI1reg       ; 3               ;
+; Vbl0          ; 2               ;
+; nIOSEL        ; 2               ;
+; A[10]         ; 2               ;
+; A[9]          ; 2               ;
+; A[8]          ; 2               ;
+; A[7]          ; 2               ;
+; A[6]          ; 2               ;
+; A[5]          ; 2               ;
+; A[4]          ; 2               ;
+; Cmd[1]        ; 2               ;
+; Cmd[4]        ; 2               ;
+; Cmd[5]        ; 2               ;
+; Cmd[6]        ; 2               ;
+; RStatusWR_MC  ; 2               ;
+; Cmd[0]        ; 2               ;
+; Cmd[3]        ; 2               ;
+; Bank[3]       ; 2               ;
+; Cmd[2]        ; 2               ;
+; IOROMEN       ; 2               ;
+; AStatWR_MC    ; 2               ;
+; CSDBEN        ; 2               ;
+; Equal12~3     ; 1               ;
+; Equal14~4     ; 1               ;
+; Vbl1          ; 1               ;
+; nKMode        ; 1               ;
+; A[15]         ; 1               ;
+; A[14]         ; 1               ;
+; A[13]         ; 1               ;
+; A[12]         ; 1               ;
+; A[11]         ; 1               ;
+; Q3            ; 1               ;
+; Dout~116      ; 1               ;
+; comb~55       ; 1               ;
+; comb~49       ; 1               ;
+; comb~44       ; 1               ;
+; comb~40       ; 1               ;
+; AIRQ~1        ; 1               ;
+; AIRQEN        ; 1               ;
+; Bank[4]       ; 1               ;
+; Dout[1]       ; 1               ;
+; Dout[4]       ; 1               ;
+; Dout[5]       ; 1               ;
+; comb~36       ; 1               ;
+; Dout[7]       ; 1               ;
+; PendRIRQEN    ; 1               ;
+; Key[1]        ; 1               ;
+; Key[4]        ; 1               ;
+; Key[5]        ; 1               ;
+; Key[6]        ; 1               ;
+; RDout[1]      ; 1               ;
+; RDout[4]      ; 1               ;
+; RDout[5]      ; 1               ;
+; RDout[6]      ; 1               ;
+; ResetRIRQEN   ; 1               ;
+; RDout[0]      ; 1               ;
+; nRRSTreg~1    ; 1               ;
+; comb~31       ; 1               ;
+; nRRSTreg      ; 1               ;
+; Dout[0]       ; 1               ;
+; Key[0]        ; 1               ;
+; Key[7]        ; 1               ;
+; RDout[3]      ; 1               ;
+; Dout[3]       ; 1               ;
+; RDout[7]      ; 1               ;
+; RDout[2]      ; 1               ;
+; Dout[2]       ; 1               ;
+; comb~28       ; 1               ;
+; PHI1b8_MC     ; 1               ;
+; PHI1b7_MC     ; 1               ;
+; PHI1b6_MC     ; 1               ;
+; PHI1b5_MC     ; 1               ;
+; PHI1b4_MC     ; 1               ;
+; PHI1b3_MC     ; 1               ;
+; PHI1b2_MC     ; 1               ;
+; C7M~4         ; 1               ;
+; PHI1b1_MC     ; 1               ;
+; Key[2]        ; 1               ;
+; Key[3]        ; 1               ;
+; Q3~1          ; 1               ;
+; nWE~1         ; 1               ;
+; PHI1b0_MC     ; 1               ;
++---------------+-----------------+
+
+
++--------------------------------------------------+
+; Other Routing Usage Summary                      ;
++-----------------------------+--------------------+
+; Other Routing Resource Type ; Usage              ;
++-----------------------------+--------------------+
+; Output enables              ; 2 / 6 ( 33 % )     ;
+; PIA buffers                 ; 210 / 288 ( 73 % ) ;
+; PIAs                        ; 233 / 288 ( 81 % ) ;
++-----------------------------+--------------------+
+
+
++-----------------------------------------------------------------------------+
+; LAB External Interconnect                                                   ;
++-----------------------------------------------+-----------------------------+
+; LAB External Interconnects  (Average = 29.13) ; Number of LABs  (Total = 8) ;
++-----------------------------------------------+-----------------------------+
+; 0 - 2                                         ; 0                           ;
+; 3 - 5                                         ; 0                           ;
+; 6 - 8                                         ; 0                           ;
+; 9 - 11                                        ; 0                           ;
+; 12 - 14                                       ; 0                           ;
+; 15 - 17                                       ; 0                           ;
+; 18 - 20                                       ; 0                           ;
+; 21 - 23                                       ; 0                           ;
+; 24 - 26                                       ; 2                           ;
+; 27 - 29                                       ; 2                           ;
+; 30 - 32                                       ; 4                           ;
++-----------------------------------------------+-----------------------------+
+
+
++-----------------------------------------------------------------------+
+; LAB Macrocells                                                        ;
++-----------------------------------------+-----------------------------+
+; Number of Macrocells  (Average = 13.00) ; Number of LABs  (Total = 8) ;
++-----------------------------------------+-----------------------------+
+; 0                                       ; 0                           ;
+; 1                                       ; 0                           ;
+; 2                                       ; 0                           ;
+; 3                                       ; 0                           ;
+; 4                                       ; 0                           ;
+; 5                                       ; 0                           ;
+; 6                                       ; 0                           ;
+; 7                                       ; 0                           ;
+; 8                                       ; 1                           ;
+; 9                                       ; 1                           ;
+; 10                                      ; 0                           ;
+; 11                                      ; 1                           ;
+; 12                                      ; 0                           ;
+; 13                                      ; 1                           ;
+; 14                                      ; 0                           ;
+; 15                                      ; 1                           ;
+; 16                                      ; 3                           ;
++-----------------------------------------+-----------------------------+
+
+
++---------------------------------------------------------+
+; Parallel Expander                                       ;
++--------------------------+------------------------------+
+; Parallel Expander Length ; Number of Parallel Expanders ;
++--------------------------+------------------------------+
+; 0                        ; 0                            ;
+; 1                        ; 1                            ;
++--------------------------+------------------------------+
+
+
++-------------------------------------------------------------------------------+
+; Shareable Expander                                                            ;
++-------------------------------------------------+-----------------------------+
+; Number of shareable expanders  (Average = 0.50) ; Number of LABs  (Total = 2) ;
++-------------------------------------------------+-----------------------------+
+; 0                                               ; 6                           ;
+; 1                                               ; 0                           ;
+; 2                                               ; 2                           ;
++-------------------------------------------------+-----------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Logic Cell Interconnection                                                                                                                                                                                                                                                                                                                     ;
++-----+------------+--------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; LAB ; Logic Cell ; Input                                                                                                                    ; Output                                                                                                                                                                                           ;
++-----+------------+--------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+;  A  ; LC6        ; C7M, nRES, RAD[2], RKeyWR_MC                                                                                             ; Dout[2]                                                                                                                                                                                          ;
+;  A  ; LC12       ; C7M, D[3], nRES, ADataLWR_MC, RDataLWR_MC, RAD[3], Data[3]                                                               ; Data[3], Dout[3], RDout[3]                                                                                                                                                                       ;
+;  A  ; LC11       ; C7M, nRES, D[0], ABankWR_MC                                                                                              ; comb~31, comb~40, comb~44, comb~49, comb~55                                                                                                                                                      ;
+;  A  ; LC1        ; C7M, nRES, D[4], ACmdWR_MC, RCmdWR_MC, Cmd[4]                                                                            ; Cmd[4], RDout[4]                                                                                                                                                                                 ;
+;  A  ; LC15       ; C7M, nRES, D[3], ACmdWR_MC, RCmdWR_MC, Cmd[3]                                                                            ; Cmd[3], RDout[3]                                                                                                                                                                                 ;
+;  A  ; LC5        ; C7M, nRES, D[1], ABankWR_MC                                                                                              ; comb~40, comb~44, comb~49, comb~55                                                                                                                                                               ;
+;  A  ; LC9        ; C7M, D[2], nRES, ADataHWR_MC, RDataHWR_MC, RAD[2], Data[10]                                                              ; Data[10], Dout[2], RDout[2]                                                                                                                                                                      ;
+;  A  ; LC2        ; C7M, nRES, D[4], ABankWR_MC                                                                                              ; comb~55                                                                                                                                                                                          ;
+;  A  ; LC8        ; C7M, nRES, D[2], ACmdWR_MC, RCmdWR_MC, Cmd[2]                                                                            ; Cmd[2], RDout[2]                                                                                                                                                                                 ;
+;  A  ; LC10       ; RAD[3], nRALE                                                                                                            ; RKeyWR_MC, RDout[2], Equal14~3sexp, RDout[3], RDout[0], RDout[6], RDout[5], RDout[4], RDout[1], Equal12~2sexp, RDataHWR_MC, RDout[7], RDataLWR_MC, RCmdWR_MC, RStatusWR_MC, Equal14~4, Equal12~3 ;
+;  A  ; LC14       ; C7M, nRES, D[2], ABankWR_MC                                                                                              ; comb~44, comb~49, comb~55                                                                                                                                                                        ;
+;  A  ; LC3        ; C7M, D[3], nRES, ADataHWR_MC, RDataHWR_MC, RAD[3], Data[11]                                                              ; Data[11], Dout[3], RDout[3]                                                                                                                                                                      ;
+;  A  ; LC16       ; RAD[2], nRALE                                                                                                            ; RKeyWR_MC, RDout[2], Equal14~3sexp, RDout[3], RDout[0], RDout[6], RDout[5], RDout[4], RDout[1], Equal12~2sexp, RDataHWR_MC, RDout[7], RDataLWR_MC, RCmdWR_MC, RStatusWR_MC, Equal14~4, Equal12~3 ;
+;  A  ; LC13       ; C7M, D[2], nRES, ADataLWR_MC, RDataLWR_MC, RAD[2], Data[2]                                                               ; Data[2], Dout[2], RDout[2]                                                                                                                                                                       ;
+;  A  ; LC4        ; C7M, nRES, RCmdWR_MC, CmdPending, ACmdWR_MC                                                                              ; CmdPending, Dout[7], comb~36                                                                                                                                                                     ;
+;  A  ; LC7        ; C7M, nRES, D[3], ABankWR_MC                                                                                              ; comb~49, comb~55                                                                                                                                                                                 ;
+;  B  ; LC29       ; C7M, nRES, nIOSEL, S[2], S[1], S[0], IOROMEN, A[4], A[5], A[6], A[7], A[8], A[9], A[10], nIOSTRB, A[2], A[3], A[0], A[1] ; IOROMEN, comb~28                                                                                                                                                                                 ;
+;  B  ; LC26       ; RAreg[3], RAreg[2], RAreg[1], RAreg[0], nRWR                                                                             ; Key[3], Key[2], Key[7], Key[0], Key[6], Key[5], Key[4], Key[1]                                                                                                                                   ;
+;  B  ; LC24       ; AIRQEN, Vbl0, Vbl1                                                                                                       ; nIRQ                                                                                                                                                                                             ;
+;  B  ; LC31       ; nRWR, RAreg[1], RAreg[0], RAreg[3], RAreg[2]                                                                             ; Data[10], Data[14], Data[13], Data[15], Data[12], Data[11], Data[9], Data[8]                                                                                                                     ;
+;  B  ; LC25       ; nRWR, RAreg[1], RAreg[0], RAreg[3], RAreg[2]                                                                             ; Data[7], Data[6], Data[5], Data[4], Data[3], Data[2], Data[1], Data[0]                                                                                                                           ;
+;  B  ; LC19       ; C7M                                                                                                                      ; Rclk                                                                                                                                                                                             ;
+;  B  ; LC21       ; nRRD                                                                                                                     ; RAD[0], RAD[1], RAD[2], RAD[3], RAD[4], RAD[5], RAD[6], RAD[7]                                                                                                                                   ;
+;  B  ; LC30       ; PHI1b7_MC                                                                                                                ; PHI1b9_MC                                                                                                                                                                                        ;
+;  B  ; LC18       ; nRWR, RAreg[1], RAreg[0], RAreg[3], RAreg[2]                                                                             ; ResetRIRQEN, PendRIRQEN                                                                                                                                                                          ;
+;  B  ; LC17       ; C7M, Cmd[0], Data[8], Data[0], nRES, nRRD, RAreg[1], RAreg[0], RAreg[3], RAreg[2], Equal14~4, Equal12~3                  ; RAD[0]                                                                                                                                                                                           ;
+;  B  ; LC32       ; nRRD, RAreg[1], RAreg[0], RAreg[3], RAreg[2]                                                                             ; Cmd[2], Cmd[3], Cmd[0], Cmd[6], Cmd[5], Cmd[4], Cmd[1], CmdPending                                                                                                                               ;
+;  C  ; LC46       ; C7M, Cmd[1], Data[9], Data[1], nRES, nRRD, RAreg[1], RAreg[0], RAreg[3], RAreg[2], Equal14~3sexp, Equal12~2sexp          ; RAD[1]                                                                                                                                                                                           ;
+;  C  ; LC43       ; C7M, Cmd[3], Data[11], Data[3], nRES, nRRD, RAreg[1], RAreg[0], RAreg[3], RAreg[2], Equal14~3sexp, Equal12~2sexp         ; RAD[3]                                                                                                                                                                                           ;
+;  C  ; LC33       ; PHI1b6_MC                                                                                                                ; PHI1b8_MC                                                                                                                                                                                        ;
+;  C  ; LC37       ; C7M, Cmd[6], Data[14], Data[6], nRES, nRRD, RAreg[1], RAreg[0], RAreg[3], RAreg[2], Equal14~3sexp, Equal12~2sexp         ; RAD[6]                                                                                                                                                                                           ;
+;  C  ; LC35       ; C7M, Data[15], Data[7], nRES, nRRD, RAreg[1], RAreg[0], RAreg[3], RAreg[2], Equal12~2sexp                                ; RAD[7]                                                                                                                                                                                           ;
+;  C  ; LC38       ; C7M, Cmd[5], Data[13], Data[5], nRES, nRRD, RAreg[1], RAreg[0], RAreg[3], RAreg[2], Equal14~3sexp, Equal12~2sexp         ; RAD[5]                                                                                                                                                                                           ;
+;  C  ; LC40       ; C7M, Cmd[4], Data[12], Data[4], nRES, nRRD, RAreg[1], RAreg[0], RAreg[3], RAreg[2], Equal14~3sexp, Equal12~2sexp         ; RAD[4]                                                                                                                                                                                           ;
+;  C  ; LC45       ; C7M, Cmd[2], Data[10], Data[2], nRES, nRRD, RAreg[1], RAreg[0], RAreg[3], RAreg[2], Equal14~3sexp, Equal12~2sexp         ; RAD[2]                                                                                                                                                                                           ;
+;  C  ; LC48       ; PHI1b0_MC                                                                                                                ; PHI1b2_MC                                                                                                                                                                                        ;
+;  D  ; LC56       ; C7M, D[6], nRES, ADataHWR_MC, RDataHWR_MC, RAD[6], Data[14]                                                              ; Data[14], RDout[6], Dout[6]                                                                                                                                                                      ;
+;  D  ; LC60       ; C7M, nRES, RAD[6], RKeyWR_MC                                                                                             ; Dout[6]                                                                                                                                                                                          ;
+;  D  ; LC50       ; C7M, D[5], nRES, ADataHWR_MC, RDataHWR_MC, RAD[5], Data[13]                                                              ; Data[13], RDout[5], Dout[5]                                                                                                                                                                      ;
+;  D  ; LC61       ; nRRSTreg                                                                                                                 ; nRRST                                                                                                                                                                                            ;
+;  D  ; LC57       ; C7M, D[7], nRES, ADataLWR_MC, RDataLWR_MC, RAD[7], Data[7]                                                               ; Data[7], RDout[7], Dout[7]                                                                                                                                                                       ;
+;  D  ; LC54       ; C7M, D[6], nRES, ADataLWR_MC, RDataLWR_MC, RAD[6], Data[6]                                                               ; Data[6], RDout[6], Dout[6]                                                                                                                                                                       ;
+;  D  ; LC53       ; C7M, D[5], nRES, ADataLWR_MC, RDataLWR_MC, RAD[5], Data[5]                                                               ; Data[5], RDout[5], Dout[5]                                                                                                                                                                       ;
+;  D  ; LC59       ; C7M, D[4], nRES, ADataLWR_MC, RDataLWR_MC, RAD[4], Data[4]                                                               ; Data[4], RDout[4], Dout[4]                                                                                                                                                                       ;
+;  D  ; LC52       ; C7M, D[7], nRES, ADataHWR_MC, RDataHWR_MC, RAD[7], Data[15]                                                              ; Data[15], RDout[7], Dout[7]                                                                                                                                                                      ;
+;  D  ; LC51       ; C7M, nRES, RAD[5], RKeyWR_MC                                                                                             ; Dout[5]                                                                                                                                                                                          ;
+;  D  ; LC58       ; C7M, nRES, RAD[0], RKeyWR_MC                                                                                             ; Dout[0]                                                                                                                                                                                          ;
+;  D  ; LC63       ; C7M, nRES, RAD[7], RKeyWR_MC                                                                                             ; Dout[7]                                                                                                                                                                                          ;
+;  D  ; LC62       ; C7M, nRES, RAD[4], RKeyWR_MC                                                                                             ; Dout[4]                                                                                                                                                                                          ;
+;  D  ; LC64       ; CmdPending, PendRIRQEN, ResetRIRQEN, nRES                                                                                ; nRIRQ                                                                                                                                                                                            ;
+;  D  ; LC55       ; C7M, nRES, RAD[3], RKeyWR_MC                                                                                             ; Dout[3]                                                                                                                                                                                          ;
+;  D  ; LC49       ; C7M, D[4], nRES, ADataHWR_MC, RDataHWR_MC, RAD[4], Data[12]                                                              ; Data[12], RDout[4], Dout[4]                                                                                                                                                                      ;
+;  E  ; LC71       ; C7M, nRES, D[1], ACmdWR_MC, RCmdWR_MC, Cmd[1]                                                                            ; Cmd[1], RDout[1]                                                                                                                                                                                 ;
+;  E  ; LC67       ; C7M, D[0], nRES, ADataHWR_MC, RDataHWR_MC, RAD[0], Data[8]                                                               ; Data[8], Dout[0], RDout[0]                                                                                                                                                                       ;
+;  E  ; LC69       ; C7M, nRES, D[0], AStatWR_MC                                                                                              ; nRRSTreg~1                                                                                                                                                                                       ;
+;  E  ; LC68       ; C7M, nRES, D[0], ACmdWR_MC, RCmdWR_MC, Cmd[0]                                                                            ; Cmd[0], RDout[0]                                                                                                                                                                                 ;
+;  E  ; LC77       ; RAD[0], nRALE                                                                                                            ; RKeyWR_MC, RDout[2], Equal14~3sexp, RDout[3], RDout[0], RDout[6], RDout[5], RDout[4], RDout[1], Equal12~2sexp, RDataHWR_MC, RDout[7], RDataLWR_MC, RCmdWR_MC, RStatusWR_MC, Equal14~4, Equal12~3 ;
+;  E  ; LC74       ; C7M, RAD[0], nRES, RStatusWR_MC                                                                                          ; comb~36                                                                                                                                                                                          ;
+;  E  ; LC79       ; C7M, nRES, D[6], ACmdWR_MC, RCmdWR_MC, Cmd[6]                                                                            ; Cmd[6], RDout[6]                                                                                                                                                                                 ;
+;  E  ; LC80       ; C7M, nRES, D[5], ACmdWR_MC, RCmdWR_MC, Cmd[5]                                                                            ; Cmd[5], RDout[5]                                                                                                                                                                                 ;
+;  E  ; LC75       ; RAD[1], nRALE                                                                                                            ; RKeyWR_MC, RDout[2], Equal14~3sexp, RDout[3], RDout[0], RDout[6], RDout[5], RDout[4], RDout[1], Equal12~2sexp, RDataHWR_MC, RDout[7], RDataLWR_MC, RCmdWR_MC, RStatusWR_MC, Equal14~4, Equal12~3 ;
+;  E  ; LC78       ; C7M, nRES, RAD[1], RKeyWR_MC                                                                                             ; Dout[1]                                                                                                                                                                                          ;
+;  E  ; LC72       ; C7M, RAD[1], nRES, RStatusWR_MC                                                                                          ; comb~36                                                                                                                                                                                          ;
+;  E  ; LC73       ; Q3                                                                                                                       ; T0                                                                                                                                                                                               ;
+;  E  ; LC65       ; C7M, D[1], nRES, ADataHWR_MC, RDataHWR_MC, RAD[1], Data[9]                                                               ; Data[9], RDout[1], Dout[1]                                                                                                                                                                       ;
+;  E  ; LC66       ; C7M, D[1], nRES, ADataLWR_MC, RDataLWR_MC, RAD[1], Data[1]                                                               ; Data[1], RDout[1], Dout[1]                                                                                                                                                                       ;
+;  E  ; LC76       ; C7M, nRES, D[1], AStatWR_MC                                                                                              ; AIRQ~1                                                                                                                                                                                           ;
+;  E  ; LC70       ; C7M, D[0], nRES, ADataLWR_MC, RDataLWR_MC, RAD[0], Data[0]                                                               ; Data[0], Dout[0], RDout[0]                                                                                                                                                                       ;
+;  F  ; LC91       ; C7M, Key[0], AKeySEL_MC, Data[8], A[0], A[1], A[2], A[3], Data[0], nRES, S[0], S[2], S[1]                                ; D[0]                                                                                                                                                                                             ;
+;  F  ; LC89       ; C7M, nRES, PHI1reg, PHI0seen, PHI1b9_MC, S[1], S[2], S[0]                                                                ; S[2], CSDBEN, S[1], S[0], ABankWR_MC, ADataHWR_MC, ADataLWR_MC, ACmdWR_MC, AStatWR_MC, IOROMEN, Dout[2], Dout[3], Dout[0], Dout[7], Dout[5], Dout[4], Dout[1], Dout[6], Dout~116                 ;
+;  F  ; LC95       ; PHI1b3_MC                                                                                                                ; PHI1b5_MC                                                                                                                                                                                        ;
+;  F  ; LC83       ; nIOSTRB, Bank[4], Bank[3], Bank[2], Bank[1], Bank[0]                                                                     ; ROMA[15]                                                                                                                                                                                         ;
+;  F  ; LC85       ; nIOSTRB, Bank[3], Bank[2], Bank[1], Bank[0]                                                                              ; ROMA[14]                                                                                                                                                                                         ;
+;  F  ; LC88       ; nIOSTRB, Bank[2], Bank[1], Bank[0]                                                                                       ; ROMA[13]                                                                                                                                                                                         ;
+;  F  ; LC86       ; nIOSTRB, Bank[1], Bank[0]                                                                                                ; ROMA[12]                                                                                                                                                                                         ;
+;  F  ; LC94       ; C7M, Key[2], AKeySEL_MC, Data[10], A[0], A[1], A[2], A[3], Data[2], nRES, S[0], S[2], S[1]                               ; D[2]                                                                                                                                                                                             ;
+;  F  ; LC96       ; C7M, nRES, PHI1reg, PHI0seen, PHI1b9_MC, S[0], S[1], S[2]                                                                ; S[2], S[1], S[0], ABankWR_MC, ADataHWR_MC, ADataLWR_MC, ACmdWR_MC, AStatWR_MC, IOROMEN, Dout[2], Dout[3], Dout[0], Dout[7], Dout[5], Dout[4], Dout[1], Dout[6], Dout~116                         ;
+;  F  ; LC84       ; PHI1b5_MC                                                                                                                ; PHI1b7_MC                                                                                                                                                                                        ;
+;  F  ; LC90       ; PHI1b4_MC                                                                                                                ; PHI1b6_MC                                                                                                                                                                                        ;
+;  F  ; LC92       ; PHI1b2_MC                                                                                                                ; PHI1b4_MC                                                                                                                                                                                        ;
+;  F  ; LC87       ; PHI1b1_MC                                                                                                                ; PHI1b3_MC                                                                                                                                                                                        ;
+;  F  ; LC93       ; C7M, Key[1], AKeySEL_MC, Data[9], A[0], A[1], A[2], A[3], Data[1], nRES, S[0], S[2], S[1]                                ; D[1]                                                                                                                                                                                             ;
+;  F  ; LC81       ; C7M, nRES, PHI1reg, PHI0seen, PHI1b9_MC, S[0], S[1], S[2]                                                                ; S[2], S[1], S[0], ABankWR_MC, ADataHWR_MC, ADataLWR_MC, ACmdWR_MC, AStatWR_MC, IOROMEN, Dout[2], Dout[3], Dout[0], Dout[7], Dout[5], Dout[4], Dout[1], Dout[6], Dout~116                         ;
+;  G  ; LC97       ; C7M, Key[3], AKeySEL_MC, Data[11], A[0], A[1], A[2], A[3], Data[3], nRES, S[0], S[2], S[1]                               ; D[3]                                                                                                                                                                                             ;
+;  G  ; LC109      ; CSDBEN, nIOSEL, IOROMEN, nIOSTRB                                                                                         ; nRCS                                                                                                                                                                                             ;
+;  G  ; LC104      ; nWE                                                                                                                      ; nROE                                                                                                                                                                                             ;
+;  G  ; LC101      ; C7M, Key[5], AKeySEL_MC, Data[13], A[1], A[0], A[2], A[3], Data[5], Vbl0, nRES, S[0], S[2], S[1]                         ; D[5]                                                                                                                                                                                             ;
+;  G  ; LC99       ; C7M, Key[4], AKeySEL_MC, Data[12], A[0], A[1], A[2], A[3], Data[4], nRES, S[0], S[2], S[1]                               ; D[4]                                                                                                                                                                                             ;
+;  G  ; LC105      ; Bank[0], nIOSTRB                                                                                                         ; ROMA[11]                                                                                                                                                                                         ;
+;  G  ; LC107      ; C7M, Dout~116, S[0], Dout[6], S[2], S[1], nRES, AKeySEL_MC, A[1], A[0], A[2], A[3], Data[6], Data[14], Key[6]            ; Dout[6], D[6], Dout~116                                                                                                                                                                          ;
+;  G  ; LC106      ; S[0], S[2], S[1], Dout[6], D[7]                                                                                          ; Dout[6]                                                                                                                                                                                          ;
+;  H  ; LC121      ; A[2], A[3], A[0], A[1], S[0], nWE, nDEVSEL, S[2], S[1]                                                                   ; Data[10], Data[14], Data[13], Data[15], Data[12], Data[11], Data[9], Data[8]                                                                                                                     ;
+;  H  ; LC128      ; A[4], A[5], A[6], A[7], A[8], A[9], A[10], A[11], A[12], A[13], A[14], A[15], nWE, nKMode                                ; DOE~6, nINH, Dout[2], Dout[3], Dout[0], Dout[7], Dout[5], Dout[4], Dout[1], Dout[6]                                                                                                              ;
+;  H  ; LC118      ; PHI0in, PHI1b8_MC                                                                                                        ; PHI1reg, PHI0seen, S[2], S[1], S[0]                                                                                                                                                              ;
+;  H  ; LC117      ; A[1], A[0], A[2], A[3], S[0], nWE, nDEVSEL, S[2], S[1]                                                                   ; Data[7], Data[6], Data[5], Data[4], Data[3], Data[2], Data[1], Data[0]                                                                                                                           ;
+;  H  ; LC115      ; C7M, Key[7], AKeySEL_MC, Data[15], A[1], A[0], A[2], A[3], Data[7], CmdPending, nRES, S[0], S[2], S[1]                   ; D[7]                                                                                                                                                                                             ;
+;  H  ; LC116      ; C7M, nRES, S[2]                                                                                                          ; DOE~6, comb~28                                                                                                                                                                                   ;
+;  H  ; LC119      ; PHI0in                                                                                                                   ; PHI1b1_MC                                                                                                                                                                                        ;
+;  H  ; LC120      ; A[0], A[1], S[0], nWE, nDEVSEL, S[2], S[1], A[2], A[3]                                                                   ; Cmd[2], Cmd[3], Cmd[0], Cmd[6], Cmd[5], Cmd[4], Cmd[1], CmdPending                                                                                                                               ;
+;  H  ; LC113      ; A[1], A[0], A[2], A[3], S[0], nWE, nDEVSEL, S[2], S[1]                                                                   ; nRRSTreg, AIRQEN                                                                                                                                                                                 ;
+;  H  ; LC124      ; C7M, nRES, PHI1b9_MC                                                                                                     ; S[2], S[1], S[0]                                                                                                                                                                                 ;
+;  H  ; LC122      ; C7M, nRES, PHI1b9_MC                                                                                                     ; S[2], S[1], S[0]                                                                                                                                                                                 ;
+;  H  ; LC123      ; nRES, nWE, CSDBEN, nDEVSEL, PHI0in, AKeySEL_MC                                                                           ; D[0], D[1], D[2], D[3], D[4], D[7], D[5], D[6]                                                                                                                                                   ;
+;  H  ; LC114      ; S[0], nWE, nDEVSEL, S[2], S[1], A[2], A[3], A[0], A[1]                                                                   ; Bank[2], Bank[3], Bank[0], Bank[4], Bank[1]                                                                                                                                                      ;
++-----+------------+--------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------+
+; Fitter Device Options                                         ;
++----------------------------------------------+----------------+
+; Option                                       ; Setting        ;
++----------------------------------------------+----------------+
+; Enable user-supplied start-up clock (CLKUSR) ; Off            ;
+; Enable device-wide reset (DEV_CLRn)          ; Off            ;
+; Enable device-wide output enable (DEV_OE)    ; Off            ;
+; Enable INIT_DONE output                      ; Off            ;
+; Configuration scheme                         ; Passive Serial ;
+; Security bit                                 ; Off            ;
+; Base pin-out file on sameframe device        ; Off            ;
++----------------------------------------------+----------------+
+
+
++-----------------+
+; Fitter Messages ;
++-----------------+
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (119006): Selected device EPM7128SLC84-15 for design "Mouserial"
+Warning (163076): Macrocell buffer inserted after node "nRRD"
+Info: Quartus II 32-bit Fitter was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 287 megabytes
+    Info: Processing ended: Sat Sep 07 20:44:29 2019
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:08
+
+

@@ -1,0 +1,1191 @@
+TimeQuest Timing Analyzer report for Mouserial
+Sat Sep 07 20:44:44 2019
+Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Clocks
+  4. Fmax Summary
+  5. Setup Summary
+  6. Hold Summary
+  7. Recovery Summary
+  8. Removal Summary
+  9. Minimum Pulse Width Summary
+ 10. Setup: 'C7M'
+ 11. Hold: 'C7M'
+ 12. Minimum Pulse Width: 'nRALE'
+ 13. Minimum Pulse Width: 'C7M'
+ 14. Setup Times
+ 15. Hold Times
+ 16. Clock to Output Times
+ 17. Minimum Clock to Output Times
+ 18. Propagation Delay
+ 19. Minimum Propagation Delay
+ 20. Output Enable Times
+ 21. Minimum Output Enable Times
+ 22. Output Disable Times
+ 23. Minimum Output Disable Times
+ 24. Setup Transfers
+ 25. Hold Transfers
+ 26. Report TCCS
+ 27. Report RSKM
+ 28. Unconstrained Paths
+ 29. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; Mouserial                                                         ;
+; Device Family      ; MAX7000S                                                          ;
+; Device Name        ; EPM7128SLC84-15                                                   ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Slow Model                                                        ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                            ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets   ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+; C7M        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { C7M }   ;
+; nRALE      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { nRALE } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+
+
++-------------------------------------------------+
+; Fmax Summary                                    ;
++-----------+-----------------+------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
++-----------+-----------------+------------+------+
+; 20.83 MHz ; 20.83 MHz       ; C7M        ;      ;
++-----------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++---------------------------------+
+; Setup Summary                   ;
++-------+---------+---------------+
+; Clock ; Slack   ; End Point TNS ;
++-------+---------+---------------+
+; C7M   ; -54.500 ; -2897.000     ;
++-------+---------+---------------+
+
+
++-------------------------------+
+; Hold Summary                  ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; C7M   ; 5.000 ; 0.000         ;
++-------+-------+---------------+
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++--------------------------------+
+; Minimum Pulse Width Summary    ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; nRALE ; -5.500 ; -44.000       ;
+; C7M   ; -4.500 ; -576.000      ;
++-------+--------+---------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Setup: 'C7M'                                                                                            ;
++---------+-----------+-------------+--------------+-------------+--------------+------------+------------+
+; Slack   ; From Node ; To Node     ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++---------+-----------+-------------+--------------+-------------+--------------+------------+------------+
+; -54.500 ; RAreg[3]  ; Key[3]      ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[3]  ; Key[0]      ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[1]  ; Data[8]     ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[3]  ; Key[2]      ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[1]  ; Data[10]    ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[1]  ; Data[2]     ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[1]  ; Cmd[2]      ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[1]  ; Data[0]     ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[1]  ; Cmd[0]      ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[1]  ; Data[11]    ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[1]  ; Data[3]     ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[1]  ; Cmd[3]      ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[3]  ; Key[1]      ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[1]  ; Data[9]     ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[1]  ; Data[1]     ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[1]  ; Cmd[1]      ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[1]  ; CmdPending  ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[1]  ; Data[15]    ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[3]  ; Key[7]      ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[1]  ; Data[7]     ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[1]  ; Cmd[6]      ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[1]  ; Data[14]    ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[3]  ; Key[6]      ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[1]  ; Data[6]     ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[1]  ; Cmd[5]      ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[1]  ; Data[13]    ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[3]  ; Key[5]      ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[1]  ; Data[5]     ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[1]  ; Cmd[4]      ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[1]  ; Data[12]    ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[3]  ; Key[4]      ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[1]  ; Data[4]     ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[1]  ; ResetRIRQEN ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[1]  ; PendRIRQEN  ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[2]  ; Key[3]      ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[1]  ; Key[3]      ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[0]  ; Key[3]      ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[2]  ; Key[0]      ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[1]  ; Key[0]      ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[0]  ; Key[0]      ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[0]  ; Data[8]     ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[3]  ; Data[8]     ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[2]  ; Data[8]     ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[2]  ; Key[2]      ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[1]  ; Key[2]      ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[0]  ; Key[2]      ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[0]  ; Data[10]    ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[3]  ; Data[10]    ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[2]  ; Data[10]    ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[0]  ; Data[2]     ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[3]  ; Data[2]     ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[2]  ; Data[2]     ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[0]  ; Cmd[2]      ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[3]  ; Cmd[2]      ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[2]  ; Cmd[2]      ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[0]  ; Data[0]     ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[3]  ; Data[0]     ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[2]  ; Data[0]     ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[0]  ; Cmd[0]      ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[3]  ; Cmd[0]      ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[2]  ; Cmd[0]      ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[0]  ; Data[11]    ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[3]  ; Data[11]    ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[2]  ; Data[11]    ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[0]  ; Data[3]     ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[3]  ; Data[3]     ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[2]  ; Data[3]     ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[0]  ; Cmd[3]      ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[3]  ; Cmd[3]      ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[2]  ; Cmd[3]      ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[2]  ; Key[1]      ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[1]  ; Key[1]      ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[0]  ; Key[1]      ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[0]  ; Data[9]     ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[3]  ; Data[9]     ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[2]  ; Data[9]     ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[0]  ; Data[1]     ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[3]  ; Data[1]     ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[2]  ; Data[1]     ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[0]  ; Cmd[1]      ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[3]  ; Cmd[1]      ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[2]  ; Cmd[1]      ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[0]  ; CmdPending  ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[3]  ; CmdPending  ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[2]  ; CmdPending  ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[0]  ; Data[15]    ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[3]  ; Data[15]    ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[2]  ; Data[15]    ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[2]  ; Key[7]      ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[1]  ; Key[7]      ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[0]  ; Key[7]      ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[0]  ; Data[7]     ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[3]  ; Data[7]     ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[2]  ; Data[7]     ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[0]  ; Cmd[6]      ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[3]  ; Cmd[6]      ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[2]  ; Cmd[6]      ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[0]  ; Data[14]    ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[3]  ; Data[14]    ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
+; -54.500 ; RAreg[2]  ; Data[14]    ; nRALE        ; C7M         ; 0.500        ; -7.000     ; 44.000     ;
++---------+-----------+-------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Hold: 'C7M'                                                                                            ;
++--------+------------+------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node  ; To Node    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------+------------+--------------+-------------+--------------+------------+------------+
+; 5.000  ; PHI1reg    ; S[0]       ; C7M          ; C7M         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000  ; PHI0seen   ; S[0]       ; C7M          ; C7M         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000  ; S[0]       ; S[0]       ; C7M          ; C7M         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000  ; S[1]       ; S[0]       ; C7M          ; C7M         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000  ; S[2]       ; S[0]       ; C7M          ; C7M         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000  ; PHI1reg    ; S[1]       ; C7M          ; C7M         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000  ; PHI0seen   ; S[1]       ; C7M          ; C7M         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000  ; S[0]       ; S[1]       ; C7M          ; C7M         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000  ; S[1]       ; S[1]       ; C7M          ; C7M         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000  ; S[2]       ; S[1]       ; C7M          ; C7M         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000  ; PHI1reg    ; S[2]       ; C7M          ; C7M         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000  ; PHI0seen   ; S[2]       ; C7M          ; C7M         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000  ; S[1]       ; S[2]       ; C7M          ; C7M         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000  ; S[2]       ; S[2]       ; C7M          ; C7M         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000  ; S[0]       ; S[2]       ; C7M          ; C7M         ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000  ; IOROMEN    ; IOROMEN    ; C7M          ; C7M         ; 0.000        ; 0.000      ; 9.000      ;
+; 18.000 ; S[2]       ; CSDBEN     ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; Data[8]    ; Data[8]    ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; Data[10]   ; Data[10]   ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; Data[2]    ; Data[2]    ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; Key[2]     ; Dout[2]    ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; Data[10]   ; Dout[2]    ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; S[0]       ; Dout[2]    ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; S[2]       ; Dout[2]    ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; S[1]       ; Dout[2]    ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; Data[2]    ; Dout[2]    ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; Cmd[2]     ; Cmd[2]     ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; Cmd[2]     ; RDout[2]   ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; Data[10]   ; RDout[2]   ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; Data[2]    ; RDout[2]   ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; Data[0]    ; Data[0]    ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; Key[0]     ; Dout[0]    ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; Data[8]    ; Dout[0]    ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; S[0]       ; Dout[0]    ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; S[2]       ; Dout[0]    ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; S[1]       ; Dout[0]    ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; Data[0]    ; Dout[0]    ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; Cmd[0]     ; Cmd[0]     ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; Cmd[0]     ; RDout[0]   ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; Data[8]    ; RDout[0]   ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; Data[0]    ; RDout[0]   ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; Data[11]   ; Data[11]   ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; Data[3]    ; Data[3]    ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; Key[3]     ; Dout[3]    ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; Data[11]   ; Dout[3]    ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; S[0]       ; Dout[3]    ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; S[2]       ; Dout[3]    ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; S[1]       ; Dout[3]    ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; Data[3]    ; Dout[3]    ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; Cmd[3]     ; Cmd[3]     ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; Cmd[3]     ; RDout[3]   ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; Data[11]   ; RDout[3]   ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; Data[3]    ; RDout[3]   ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; Data[9]    ; Data[9]    ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; Data[1]    ; Data[1]    ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; Key[1]     ; Dout[1]    ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; Data[9]    ; Dout[1]    ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; S[0]       ; Dout[1]    ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; S[2]       ; Dout[1]    ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; S[1]       ; Dout[1]    ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; Data[1]    ; Dout[1]    ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; Cmd[1]     ; Cmd[1]     ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; Cmd[1]     ; RDout[1]   ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; Data[9]    ; RDout[1]   ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; Data[1]    ; RDout[1]   ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; S[2]       ; IOROMEN    ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; S[1]       ; IOROMEN    ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; S[0]       ; IOROMEN    ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; CmdPending ; CmdPending ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; Data[15]   ; Data[15]   ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; Data[15]   ; RDout[7]   ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; Data[7]    ; RDout[7]   ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; CmdPending ; Dout[7]    ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; Key[7]     ; Dout[7]    ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; Data[15]   ; Dout[7]    ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; S[0]       ; Dout[7]    ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; S[2]       ; Dout[7]    ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; S[1]       ; Dout[7]    ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; Data[7]    ; Dout[7]    ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; Data[7]    ; Data[7]    ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; Cmd[6]     ; Cmd[6]     ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; Data[14]   ; Data[14]   ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; Cmd[6]     ; RDout[6]   ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; Data[14]   ; RDout[6]   ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; Data[6]    ; RDout[6]   ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; S[0]       ; Dout[6]    ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; S[2]       ; Dout[6]    ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; S[1]       ; Dout[6]    ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; Key[6]     ; Dout[6]    ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; Dout[6]    ; Dout[6]    ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; Data[6]    ; Dout[6]    ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; Data[14]   ; Dout[6]    ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; Data[6]    ; Data[6]    ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; Cmd[5]     ; Cmd[5]     ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; Data[13]   ; Data[13]   ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; Cmd[5]     ; RDout[5]   ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; Data[13]   ; RDout[5]   ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; Data[5]    ; RDout[5]   ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; Key[5]     ; Dout[5]    ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
+; 18.000 ; Data[13]   ; Dout[5]    ; C7M          ; C7M         ; 0.000        ; 0.000      ; 22.000     ;
++--------+------------+------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'nRALE'                                                                   ;
++--------+--------------+----------------+------------------+-------+------------+---------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target        ;
++--------+--------------+----------------+------------------+-------+------------+---------------+
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; nRALE ; Fall       ; RAreg[0]      ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; nRALE ; Fall       ; RAreg[0]      ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; nRALE ; Fall       ; RAreg[1]      ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; nRALE ; Fall       ; RAreg[1]      ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; nRALE ; Fall       ; RAreg[2]      ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; nRALE ; Fall       ; RAreg[2]      ;
+; -5.500 ; 0.500        ; 6.000          ; High Pulse Width ; nRALE ; Fall       ; RAreg[3]      ;
+; -5.500 ; 0.500        ; 6.000          ; Low Pulse Width  ; nRALE ; Fall       ; RAreg[3]      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; nRALE ; Rise       ; RAreg[0]|[1]  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; nRALE ; Rise       ; RAreg[0]|[1]  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; nRALE ; Rise       ; RAreg[1]|[1]  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; nRALE ; Rise       ; RAreg[1]|[1]  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; nRALE ; Rise       ; RAreg[2]|[1]  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; nRALE ; Rise       ; RAreg[2]|[1]  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; nRALE ; Rise       ; RAreg[3]|[1]  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; nRALE ; Rise       ; RAreg[3]|[1]  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; nRALE ; Rise       ; nRALE|dataout ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; nRALE ; Rise       ; nRALE|dataout ;
++--------+--------------+----------------+------------------+-------+------------+---------------+
+
+
++---------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'C7M'                                                                  ;
++--------+--------------+----------------+------------------+-------+------------+------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target     ;
++--------+--------------+----------------+------------------+-------+------------+------------+
+; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; C7M   ; Rise       ; AIRQEN     ;
+; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; C7M   ; Rise       ; AIRQEN     ;
+; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; C7M   ; Rise       ; Bank[0]    ;
+; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; C7M   ; Rise       ; Bank[0]    ;
+; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; C7M   ; Rise       ; Bank[1]    ;
+; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; C7M   ; Rise       ; Bank[1]    ;
+; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; C7M   ; Rise       ; Bank[2]    ;
+; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; C7M   ; Rise       ; Bank[2]    ;
+; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; C7M   ; Rise       ; Bank[3]    ;
+; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; C7M   ; Rise       ; Bank[3]    ;
+; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; C7M   ; Rise       ; Bank[4]    ;
+; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; C7M   ; Rise       ; Bank[4]    ;
+; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; C7M   ; Rise       ; CSDBEN     ;
+; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; C7M   ; Rise       ; CSDBEN     ;
+; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; C7M   ; Rise       ; CmdPending ;
+; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; C7M   ; Rise       ; CmdPending ;
+; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; C7M   ; Rise       ; Cmd[0]     ;
+; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; C7M   ; Rise       ; Cmd[0]     ;
+; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; C7M   ; Rise       ; Cmd[1]     ;
+; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; C7M   ; Rise       ; Cmd[1]     ;
+; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; C7M   ; Rise       ; Cmd[2]     ;
+; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; C7M   ; Rise       ; Cmd[2]     ;
+; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; C7M   ; Rise       ; Cmd[3]     ;
+; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; C7M   ; Rise       ; Cmd[3]     ;
+; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; C7M   ; Rise       ; Cmd[4]     ;
+; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; C7M   ; Rise       ; Cmd[4]     ;
+; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; C7M   ; Rise       ; Cmd[5]     ;
+; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; C7M   ; Rise       ; Cmd[5]     ;
+; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; C7M   ; Rise       ; Cmd[6]     ;
+; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; C7M   ; Rise       ; Cmd[6]     ;
+; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; C7M   ; Rise       ; Data[0]    ;
+; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; C7M   ; Rise       ; Data[0]    ;
+; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; C7M   ; Rise       ; Data[10]   ;
+; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; C7M   ; Rise       ; Data[10]   ;
+; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; C7M   ; Rise       ; Data[11]   ;
+; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; C7M   ; Rise       ; Data[11]   ;
+; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; C7M   ; Rise       ; Data[12]   ;
+; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; C7M   ; Rise       ; Data[12]   ;
+; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; C7M   ; Rise       ; Data[13]   ;
+; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; C7M   ; Rise       ; Data[13]   ;
+; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; C7M   ; Rise       ; Data[14]   ;
+; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; C7M   ; Rise       ; Data[14]   ;
+; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; C7M   ; Rise       ; Data[15]   ;
+; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; C7M   ; Rise       ; Data[15]   ;
+; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; C7M   ; Rise       ; Data[1]    ;
+; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; C7M   ; Rise       ; Data[1]    ;
+; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; C7M   ; Rise       ; Data[2]    ;
+; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; C7M   ; Rise       ; Data[2]    ;
+; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; C7M   ; Rise       ; Data[3]    ;
+; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; C7M   ; Rise       ; Data[3]    ;
+; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; C7M   ; Rise       ; Data[4]    ;
+; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; C7M   ; Rise       ; Data[4]    ;
+; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; C7M   ; Rise       ; Data[5]    ;
+; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; C7M   ; Rise       ; Data[5]    ;
+; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; C7M   ; Rise       ; Data[6]    ;
+; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; C7M   ; Rise       ; Data[6]    ;
+; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; C7M   ; Rise       ; Data[7]    ;
+; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; C7M   ; Rise       ; Data[7]    ;
+; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; C7M   ; Rise       ; Data[8]    ;
+; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; C7M   ; Rise       ; Data[8]    ;
+; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; C7M   ; Rise       ; Data[9]    ;
+; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; C7M   ; Rise       ; Data[9]    ;
+; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; C7M   ; Rise       ; Dout[0]    ;
+; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; C7M   ; Rise       ; Dout[0]    ;
+; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; C7M   ; Rise       ; Dout[1]    ;
+; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; C7M   ; Rise       ; Dout[1]    ;
+; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; C7M   ; Rise       ; Dout[2]    ;
+; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; C7M   ; Rise       ; Dout[2]    ;
+; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; C7M   ; Rise       ; Dout[3]    ;
+; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; C7M   ; Rise       ; Dout[3]    ;
+; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; C7M   ; Rise       ; Dout[4]    ;
+; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; C7M   ; Rise       ; Dout[4]    ;
+; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; C7M   ; Rise       ; Dout[5]    ;
+; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; C7M   ; Rise       ; Dout[5]    ;
+; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; C7M   ; Rise       ; Dout[6]    ;
+; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; C7M   ; Rise       ; Dout[6]    ;
+; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; C7M   ; Rise       ; Dout[7]    ;
+; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; C7M   ; Rise       ; Dout[7]    ;
+; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; C7M   ; Rise       ; IOROMEN    ;
+; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; C7M   ; Rise       ; IOROMEN    ;
+; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; C7M   ; Rise       ; Key[0]     ;
+; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; C7M   ; Rise       ; Key[0]     ;
+; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; C7M   ; Rise       ; Key[1]     ;
+; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; C7M   ; Rise       ; Key[1]     ;
+; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; C7M   ; Rise       ; Key[2]     ;
+; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; C7M   ; Rise       ; Key[2]     ;
+; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; C7M   ; Rise       ; Key[3]     ;
+; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; C7M   ; Rise       ; Key[3]     ;
+; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; C7M   ; Rise       ; Key[4]     ;
+; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; C7M   ; Rise       ; Key[4]     ;
+; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; C7M   ; Rise       ; Key[5]     ;
+; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; C7M   ; Rise       ; Key[5]     ;
+; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; C7M   ; Rise       ; Key[6]     ;
+; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; C7M   ; Rise       ; Key[6]     ;
+; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; C7M   ; Rise       ; Key[7]     ;
+; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; C7M   ; Rise       ; Key[7]     ;
+; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; C7M   ; Rise       ; PHI0seen   ;
+; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; C7M   ; Rise       ; PHI0seen   ;
+; -4.500 ; 0.500        ; 5.000          ; High Pulse Width ; C7M   ; Rise       ; PHI1reg    ;
+; -4.500 ; 0.500        ; 5.000          ; Low Pulse Width  ; C7M   ; Rise       ; PHI1reg    ;
++--------+--------------+----------------+------------------+-------+------------+------------+
+
+
++---------------------------------------------------------------------------+
+; Setup Times                                                               ;
++-----------+------------+---------+---------+------------+-----------------+
+; Data Port ; Clock Port ; Rise    ; Fall    ; Clock Edge ; Clock Reference ;
++-----------+------------+---------+---------+------------+-----------------+
+; A[*]      ; C7M        ; 46.000  ; 46.000  ; Rise       ; C7M             ;
+;  A[0]     ; C7M        ; 46.000  ; 46.000  ; Rise       ; C7M             ;
+;  A[1]     ; C7M        ; 46.000  ; 46.000  ; Rise       ; C7M             ;
+;  A[2]     ; C7M        ; 46.000  ; 46.000  ; Rise       ; C7M             ;
+;  A[3]     ; C7M        ; 46.000  ; 46.000  ; Rise       ; C7M             ;
+;  A[4]     ; C7M        ; 46.000  ; 46.000  ; Rise       ; C7M             ;
+;  A[5]     ; C7M        ; 46.000  ; 46.000  ; Rise       ; C7M             ;
+;  A[6]     ; C7M        ; 46.000  ; 46.000  ; Rise       ; C7M             ;
+;  A[7]     ; C7M        ; 46.000  ; 46.000  ; Rise       ; C7M             ;
+;  A[8]     ; C7M        ; 46.000  ; 46.000  ; Rise       ; C7M             ;
+;  A[9]     ; C7M        ; 46.000  ; 46.000  ; Rise       ; C7M             ;
+;  A[10]    ; C7M        ; 46.000  ; 46.000  ; Rise       ; C7M             ;
+;  A[11]    ; C7M        ; 46.000  ; 46.000  ; Rise       ; C7M             ;
+;  A[12]    ; C7M        ; 46.000  ; 46.000  ; Rise       ; C7M             ;
+;  A[13]    ; C7M        ; 46.000  ; 46.000  ; Rise       ; C7M             ;
+;  A[14]    ; C7M        ; 46.000  ; 46.000  ; Rise       ; C7M             ;
+;  A[15]    ; C7M        ; 46.000  ; 46.000  ; Rise       ; C7M             ;
+; D[*]      ; C7M        ; 25.000  ; 25.000  ; Rise       ; C7M             ;
+;  D[0]     ; C7M        ; 24.000  ; 24.000  ; Rise       ; C7M             ;
+;  D[1]     ; C7M        ; 24.000  ; 24.000  ; Rise       ; C7M             ;
+;  D[2]     ; C7M        ; 24.000  ; 24.000  ; Rise       ; C7M             ;
+;  D[3]     ; C7M        ; 24.000  ; 24.000  ; Rise       ; C7M             ;
+;  D[4]     ; C7M        ; 24.000  ; 24.000  ; Rise       ; C7M             ;
+;  D[5]     ; C7M        ; 24.000  ; 24.000  ; Rise       ; C7M             ;
+;  D[6]     ; C7M        ; 24.000  ; 24.000  ; Rise       ; C7M             ;
+;  D[7]     ; C7M        ; 25.000  ; 25.000  ; Rise       ; C7M             ;
+; PHI0in    ; C7M        ; 101.000 ; 101.000 ; Rise       ; C7M             ;
+; RAD[*]    ; C7M        ; 24.000  ; 24.000  ; Rise       ; C7M             ;
+;  RAD[0]   ; C7M        ; 24.000  ; 24.000  ; Rise       ; C7M             ;
+;  RAD[1]   ; C7M        ; 24.000  ; 24.000  ; Rise       ; C7M             ;
+;  RAD[2]   ; C7M        ; 24.000  ; 24.000  ; Rise       ; C7M             ;
+;  RAD[3]   ; C7M        ; 24.000  ; 24.000  ; Rise       ; C7M             ;
+;  RAD[4]   ; C7M        ; 24.000  ; 24.000  ; Rise       ; C7M             ;
+;  RAD[5]   ; C7M        ; 24.000  ; 24.000  ; Rise       ; C7M             ;
+;  RAD[6]   ; C7M        ; 24.000  ; 24.000  ; Rise       ; C7M             ;
+;  RAD[7]   ; C7M        ; 24.000  ; 24.000  ; Rise       ; C7M             ;
+; Vbl0      ; C7M        ; 24.000  ; 24.000  ; Rise       ; C7M             ;
+; nDEVSEL   ; C7M        ; 46.000  ; 46.000  ; Rise       ; C7M             ;
+; nIOSEL    ; C7M        ; 24.000  ; 24.000  ; Rise       ; C7M             ;
+; nIOSTRB   ; C7M        ; 24.000  ; 24.000  ; Rise       ; C7M             ;
+; nKMode    ; C7M        ; 46.000  ; 46.000  ; Rise       ; C7M             ;
+; nRES      ; C7M        ; 24.000  ; 24.000  ; Rise       ; C7M             ;
+; nRRD      ; C7M        ; 46.000  ; 46.000  ; Rise       ; C7M             ;
+; nRWR      ; C7M        ; 46.000  ; 46.000  ; Rise       ; C7M             ;
+; nWE       ; C7M        ; 46.000  ; 46.000  ; Rise       ; C7M             ;
+; RAD[*]    ; nRALE      ; 4.000   ; 4.000   ; Fall       ; nRALE           ;
+;  RAD[0]   ; nRALE      ; 4.000   ; 4.000   ; Fall       ; nRALE           ;
+;  RAD[1]   ; nRALE      ; 4.000   ; 4.000   ; Fall       ; nRALE           ;
+;  RAD[2]   ; nRALE      ; 4.000   ; 4.000   ; Fall       ; nRALE           ;
+;  RAD[3]   ; nRALE      ; 4.000   ; 4.000   ; Fall       ; nRALE           ;
++-----------+------------+---------+---------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Hold Times                                                                ;
++-----------+------------+---------+---------+------------+-----------------+
+; Data Port ; Clock Port ; Rise    ; Fall    ; Clock Edge ; Clock Reference ;
++-----------+------------+---------+---------+------------+-----------------+
+; A[*]      ; C7M        ; -16.000 ; -16.000 ; Rise       ; C7M             ;
+;  A[0]     ; C7M        ; -16.000 ; -16.000 ; Rise       ; C7M             ;
+;  A[1]     ; C7M        ; -16.000 ; -16.000 ; Rise       ; C7M             ;
+;  A[2]     ; C7M        ; -16.000 ; -16.000 ; Rise       ; C7M             ;
+;  A[3]     ; C7M        ; -16.000 ; -16.000 ; Rise       ; C7M             ;
+;  A[4]     ; C7M        ; -16.000 ; -16.000 ; Rise       ; C7M             ;
+;  A[5]     ; C7M        ; -16.000 ; -16.000 ; Rise       ; C7M             ;
+;  A[6]     ; C7M        ; -16.000 ; -16.000 ; Rise       ; C7M             ;
+;  A[7]     ; C7M        ; -16.000 ; -16.000 ; Rise       ; C7M             ;
+;  A[8]     ; C7M        ; -16.000 ; -16.000 ; Rise       ; C7M             ;
+;  A[9]     ; C7M        ; -16.000 ; -16.000 ; Rise       ; C7M             ;
+;  A[10]    ; C7M        ; -16.000 ; -16.000 ; Rise       ; C7M             ;
+;  A[11]    ; C7M        ; -38.000 ; -38.000 ; Rise       ; C7M             ;
+;  A[12]    ; C7M        ; -38.000 ; -38.000 ; Rise       ; C7M             ;
+;  A[13]    ; C7M        ; -38.000 ; -38.000 ; Rise       ; C7M             ;
+;  A[14]    ; C7M        ; -38.000 ; -38.000 ; Rise       ; C7M             ;
+;  A[15]    ; C7M        ; -38.000 ; -38.000 ; Rise       ; C7M             ;
+; D[*]      ; C7M        ; -16.000 ; -16.000 ; Rise       ; C7M             ;
+;  D[0]     ; C7M        ; -16.000 ; -16.000 ; Rise       ; C7M             ;
+;  D[1]     ; C7M        ; -16.000 ; -16.000 ; Rise       ; C7M             ;
+;  D[2]     ; C7M        ; -16.000 ; -16.000 ; Rise       ; C7M             ;
+;  D[3]     ; C7M        ; -16.000 ; -16.000 ; Rise       ; C7M             ;
+;  D[4]     ; C7M        ; -16.000 ; -16.000 ; Rise       ; C7M             ;
+;  D[5]     ; C7M        ; -16.000 ; -16.000 ; Rise       ; C7M             ;
+;  D[6]     ; C7M        ; -16.000 ; -16.000 ; Rise       ; C7M             ;
+;  D[7]     ; C7M        ; -16.000 ; -16.000 ; Rise       ; C7M             ;
+; PHI0in    ; C7M        ; -12.000 ; -12.000 ; Rise       ; C7M             ;
+; RAD[*]    ; C7M        ; -16.000 ; -16.000 ; Rise       ; C7M             ;
+;  RAD[0]   ; C7M        ; -16.000 ; -16.000 ; Rise       ; C7M             ;
+;  RAD[1]   ; C7M        ; -16.000 ; -16.000 ; Rise       ; C7M             ;
+;  RAD[2]   ; C7M        ; -16.000 ; -16.000 ; Rise       ; C7M             ;
+;  RAD[3]   ; C7M        ; -16.000 ; -16.000 ; Rise       ; C7M             ;
+;  RAD[4]   ; C7M        ; -16.000 ; -16.000 ; Rise       ; C7M             ;
+;  RAD[5]   ; C7M        ; -16.000 ; -16.000 ; Rise       ; C7M             ;
+;  RAD[6]   ; C7M        ; -16.000 ; -16.000 ; Rise       ; C7M             ;
+;  RAD[7]   ; C7M        ; -16.000 ; -16.000 ; Rise       ; C7M             ;
+; Vbl0      ; C7M        ; -16.000 ; -16.000 ; Rise       ; C7M             ;
+; nDEVSEL   ; C7M        ; -38.000 ; -38.000 ; Rise       ; C7M             ;
+; nIOSEL    ; C7M        ; -16.000 ; -16.000 ; Rise       ; C7M             ;
+; nIOSTRB   ; C7M        ; -16.000 ; -16.000 ; Rise       ; C7M             ;
+; nKMode    ; C7M        ; -38.000 ; -38.000 ; Rise       ; C7M             ;
+; nRES      ; C7M        ; -16.000 ; -16.000 ; Rise       ; C7M             ;
+; nRRD      ; C7M        ; -16.000 ; -16.000 ; Rise       ; C7M             ;
+; nRWR      ; C7M        ; -38.000 ; -38.000 ; Rise       ; C7M             ;
+; nWE       ; C7M        ; -38.000 ; -38.000 ; Rise       ; C7M             ;
+; RAD[*]    ; nRALE      ; 4.000   ; 4.000   ; Fall       ; nRALE           ;
+;  RAD[0]   ; nRALE      ; 4.000   ; 4.000   ; Fall       ; nRALE           ;
+;  RAD[1]   ; nRALE      ; 4.000   ; 4.000   ; Fall       ; nRALE           ;
+;  RAD[2]   ; nRALE      ; 4.000   ; 4.000   ; Fall       ; nRALE           ;
+;  RAD[3]   ; nRALE      ; 4.000   ; 4.000   ; Fall       ; nRALE           ;
++-----------+------------+---------+---------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; D[*]      ; C7M        ; 12.000 ; 12.000 ; Rise       ; C7M             ;
+;  D[0]     ; C7M        ; 12.000 ; 12.000 ; Rise       ; C7M             ;
+;  D[1]     ; C7M        ; 12.000 ; 12.000 ; Rise       ; C7M             ;
+;  D[2]     ; C7M        ; 12.000 ; 12.000 ; Rise       ; C7M             ;
+;  D[3]     ; C7M        ; 12.000 ; 12.000 ; Rise       ; C7M             ;
+;  D[4]     ; C7M        ; 12.000 ; 12.000 ; Rise       ; C7M             ;
+;  D[5]     ; C7M        ; 12.000 ; 12.000 ; Rise       ; C7M             ;
+;  D[6]     ; C7M        ; 12.000 ; 12.000 ; Rise       ; C7M             ;
+;  D[7]     ; C7M        ; 12.000 ; 12.000 ; Rise       ; C7M             ;
+; RAD[*]    ; C7M        ; 12.000 ; 12.000 ; Rise       ; C7M             ;
+;  RAD[0]   ; C7M        ; 12.000 ; 12.000 ; Rise       ; C7M             ;
+;  RAD[1]   ; C7M        ; 12.000 ; 12.000 ; Rise       ; C7M             ;
+;  RAD[2]   ; C7M        ; 12.000 ; 12.000 ; Rise       ; C7M             ;
+;  RAD[3]   ; C7M        ; 12.000 ; 12.000 ; Rise       ; C7M             ;
+;  RAD[4]   ; C7M        ; 12.000 ; 12.000 ; Rise       ; C7M             ;
+;  RAD[5]   ; C7M        ; 12.000 ; 12.000 ; Rise       ; C7M             ;
+;  RAD[6]   ; C7M        ; 12.000 ; 12.000 ; Rise       ; C7M             ;
+;  RAD[7]   ; C7M        ; 12.000 ; 12.000 ; Rise       ; C7M             ;
+; ROMA[*]   ; C7M        ; 34.000 ; 34.000 ; Rise       ; C7M             ;
+;  ROMA[11] ; C7M        ; 34.000 ; 34.000 ; Rise       ; C7M             ;
+;  ROMA[12] ; C7M        ; 34.000 ; 34.000 ; Rise       ; C7M             ;
+;  ROMA[13] ; C7M        ; 34.000 ; 34.000 ; Rise       ; C7M             ;
+;  ROMA[14] ; C7M        ; 34.000 ; 34.000 ; Rise       ; C7M             ;
+;  ROMA[15] ; C7M        ; 34.000 ; 34.000 ; Rise       ; C7M             ;
+; Rclk      ; C7M        ; 32.000 ; 32.000 ; Rise       ; C7M             ;
+; nIRQ      ; C7M        ; 30.000 ; 30.000 ; Rise       ; C7M             ;
+; nRCS      ; C7M        ; 34.000 ; 34.000 ; Rise       ; C7M             ;
+; nRIRQ     ; C7M        ; 34.000 ; 34.000 ; Rise       ; C7M             ;
+; nRRST     ; C7M        ; 30.000 ; 30.000 ; Rise       ; C7M             ;
+; Rclk      ; C7M        ; 32.000 ; 32.000 ; Fall       ; C7M             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; D[*]      ; C7M        ; 12.000 ; 12.000 ; Rise       ; C7M             ;
+;  D[0]     ; C7M        ; 12.000 ; 12.000 ; Rise       ; C7M             ;
+;  D[1]     ; C7M        ; 12.000 ; 12.000 ; Rise       ; C7M             ;
+;  D[2]     ; C7M        ; 12.000 ; 12.000 ; Rise       ; C7M             ;
+;  D[3]     ; C7M        ; 12.000 ; 12.000 ; Rise       ; C7M             ;
+;  D[4]     ; C7M        ; 12.000 ; 12.000 ; Rise       ; C7M             ;
+;  D[5]     ; C7M        ; 12.000 ; 12.000 ; Rise       ; C7M             ;
+;  D[6]     ; C7M        ; 12.000 ; 12.000 ; Rise       ; C7M             ;
+;  D[7]     ; C7M        ; 12.000 ; 12.000 ; Rise       ; C7M             ;
+; RAD[*]    ; C7M        ; 12.000 ; 12.000 ; Rise       ; C7M             ;
+;  RAD[0]   ; C7M        ; 12.000 ; 12.000 ; Rise       ; C7M             ;
+;  RAD[1]   ; C7M        ; 12.000 ; 12.000 ; Rise       ; C7M             ;
+;  RAD[2]   ; C7M        ; 12.000 ; 12.000 ; Rise       ; C7M             ;
+;  RAD[3]   ; C7M        ; 12.000 ; 12.000 ; Rise       ; C7M             ;
+;  RAD[4]   ; C7M        ; 12.000 ; 12.000 ; Rise       ; C7M             ;
+;  RAD[5]   ; C7M        ; 12.000 ; 12.000 ; Rise       ; C7M             ;
+;  RAD[6]   ; C7M        ; 12.000 ; 12.000 ; Rise       ; C7M             ;
+;  RAD[7]   ; C7M        ; 12.000 ; 12.000 ; Rise       ; C7M             ;
+; ROMA[*]   ; C7M        ; 34.000 ; 34.000 ; Rise       ; C7M             ;
+;  ROMA[11] ; C7M        ; 34.000 ; 34.000 ; Rise       ; C7M             ;
+;  ROMA[12] ; C7M        ; 34.000 ; 34.000 ; Rise       ; C7M             ;
+;  ROMA[13] ; C7M        ; 34.000 ; 34.000 ; Rise       ; C7M             ;
+;  ROMA[14] ; C7M        ; 34.000 ; 34.000 ; Rise       ; C7M             ;
+;  ROMA[15] ; C7M        ; 34.000 ; 34.000 ; Rise       ; C7M             ;
+; Rclk      ; C7M        ; 32.000 ; 32.000 ; Rise       ; C7M             ;
+; nIRQ      ; C7M        ; 30.000 ; 30.000 ; Rise       ; C7M             ;
+; nRCS      ; C7M        ; 34.000 ; 34.000 ; Rise       ; C7M             ;
+; nRIRQ     ; C7M        ; 34.000 ; 34.000 ; Rise       ; C7M             ;
+; nRRST     ; C7M        ; 30.000 ; 30.000 ; Rise       ; C7M             ;
+; Rclk      ; C7M        ; 32.000 ; 32.000 ; Fall       ; C7M             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------------------------------------+
+; Propagation Delay                                            ;
++------------+-------------+--------+--------+--------+--------+
+; Input Port ; Output Port ; RR     ; RF     ; FR     ; FF     ;
++------------+-------------+--------+--------+--------+--------+
+; A[4]       ; D[0]        ; 61.000 ;        ;        ; 61.000 ;
+; A[4]       ; D[1]        ; 61.000 ;        ;        ; 61.000 ;
+; A[4]       ; D[2]        ; 61.000 ;        ;        ; 61.000 ;
+; A[4]       ; D[3]        ; 61.000 ;        ;        ; 61.000 ;
+; A[4]       ; D[4]        ; 61.000 ;        ;        ; 61.000 ;
+; A[4]       ; D[5]        ; 61.000 ;        ;        ; 61.000 ;
+; A[4]       ; D[6]        ; 61.000 ;        ;        ; 61.000 ;
+; A[4]       ; D[7]        ; 61.000 ;        ;        ; 61.000 ;
+; A[4]       ; nINH        ;        ; 28.000 ; 28.000 ;        ;
+; A[5]       ; D[0]        ; 61.000 ;        ;        ; 61.000 ;
+; A[5]       ; D[1]        ; 61.000 ;        ;        ; 61.000 ;
+; A[5]       ; D[2]        ; 61.000 ;        ;        ; 61.000 ;
+; A[5]       ; D[3]        ; 61.000 ;        ;        ; 61.000 ;
+; A[5]       ; D[4]        ; 61.000 ;        ;        ; 61.000 ;
+; A[5]       ; D[5]        ; 61.000 ;        ;        ; 61.000 ;
+; A[5]       ; D[6]        ; 61.000 ;        ;        ; 61.000 ;
+; A[5]       ; D[7]        ; 61.000 ;        ;        ; 61.000 ;
+; A[5]       ; nINH        ;        ; 28.000 ; 28.000 ;        ;
+; A[6]       ; D[0]        ; 61.000 ;        ;        ; 61.000 ;
+; A[6]       ; D[1]        ; 61.000 ;        ;        ; 61.000 ;
+; A[6]       ; D[2]        ; 61.000 ;        ;        ; 61.000 ;
+; A[6]       ; D[3]        ; 61.000 ;        ;        ; 61.000 ;
+; A[6]       ; D[4]        ; 61.000 ;        ;        ; 61.000 ;
+; A[6]       ; D[5]        ; 61.000 ;        ;        ; 61.000 ;
+; A[6]       ; D[6]        ; 61.000 ;        ;        ; 61.000 ;
+; A[6]       ; D[7]        ; 61.000 ;        ;        ; 61.000 ;
+; A[6]       ; nINH        ;        ; 28.000 ; 28.000 ;        ;
+; A[7]       ; D[0]        ; 61.000 ;        ;        ; 61.000 ;
+; A[7]       ; D[1]        ; 61.000 ;        ;        ; 61.000 ;
+; A[7]       ; D[2]        ; 61.000 ;        ;        ; 61.000 ;
+; A[7]       ; D[3]        ; 61.000 ;        ;        ; 61.000 ;
+; A[7]       ; D[4]        ; 61.000 ;        ;        ; 61.000 ;
+; A[7]       ; D[5]        ; 61.000 ;        ;        ; 61.000 ;
+; A[7]       ; D[6]        ; 61.000 ;        ;        ; 61.000 ;
+; A[7]       ; D[7]        ; 61.000 ;        ;        ; 61.000 ;
+; A[7]       ; nINH        ;        ; 28.000 ; 28.000 ;        ;
+; A[8]       ; D[0]        ; 61.000 ;        ;        ; 61.000 ;
+; A[8]       ; D[1]        ; 61.000 ;        ;        ; 61.000 ;
+; A[8]       ; D[2]        ; 61.000 ;        ;        ; 61.000 ;
+; A[8]       ; D[3]        ; 61.000 ;        ;        ; 61.000 ;
+; A[8]       ; D[4]        ; 61.000 ;        ;        ; 61.000 ;
+; A[8]       ; D[5]        ; 61.000 ;        ;        ; 61.000 ;
+; A[8]       ; D[6]        ; 61.000 ;        ;        ; 61.000 ;
+; A[8]       ; D[7]        ; 61.000 ;        ;        ; 61.000 ;
+; A[8]       ; nINH        ;        ; 28.000 ; 28.000 ;        ;
+; A[9]       ; D[0]        ; 61.000 ;        ;        ; 61.000 ;
+; A[9]       ; D[1]        ; 61.000 ;        ;        ; 61.000 ;
+; A[9]       ; D[2]        ; 61.000 ;        ;        ; 61.000 ;
+; A[9]       ; D[3]        ; 61.000 ;        ;        ; 61.000 ;
+; A[9]       ; D[4]        ; 61.000 ;        ;        ; 61.000 ;
+; A[9]       ; D[5]        ; 61.000 ;        ;        ; 61.000 ;
+; A[9]       ; D[6]        ; 61.000 ;        ;        ; 61.000 ;
+; A[9]       ; D[7]        ; 61.000 ;        ;        ; 61.000 ;
+; A[9]       ; nINH        ;        ; 28.000 ; 28.000 ;        ;
+; A[10]      ; D[0]        ; 61.000 ;        ;        ; 61.000 ;
+; A[10]      ; D[1]        ; 61.000 ;        ;        ; 61.000 ;
+; A[10]      ; D[2]        ; 61.000 ;        ;        ; 61.000 ;
+; A[10]      ; D[3]        ; 61.000 ;        ;        ; 61.000 ;
+; A[10]      ; D[4]        ; 61.000 ;        ;        ; 61.000 ;
+; A[10]      ; D[5]        ; 61.000 ;        ;        ; 61.000 ;
+; A[10]      ; D[6]        ; 61.000 ;        ;        ; 61.000 ;
+; A[10]      ; D[7]        ; 61.000 ;        ;        ; 61.000 ;
+; A[10]      ; nINH        ;        ; 28.000 ; 28.000 ;        ;
+; A[11]      ; D[0]        ; 61.000 ;        ;        ; 61.000 ;
+; A[11]      ; D[1]        ; 61.000 ;        ;        ; 61.000 ;
+; A[11]      ; D[2]        ; 61.000 ;        ;        ; 61.000 ;
+; A[11]      ; D[3]        ; 61.000 ;        ;        ; 61.000 ;
+; A[11]      ; D[4]        ; 61.000 ;        ;        ; 61.000 ;
+; A[11]      ; D[5]        ; 61.000 ;        ;        ; 61.000 ;
+; A[11]      ; D[6]        ; 61.000 ;        ;        ; 61.000 ;
+; A[11]      ; D[7]        ; 61.000 ;        ;        ; 61.000 ;
+; A[11]      ; nINH        ;        ; 28.000 ; 28.000 ;        ;
+; A[12]      ; D[0]        ; 61.000 ;        ;        ; 61.000 ;
+; A[12]      ; D[1]        ; 61.000 ;        ;        ; 61.000 ;
+; A[12]      ; D[2]        ; 61.000 ;        ;        ; 61.000 ;
+; A[12]      ; D[3]        ; 61.000 ;        ;        ; 61.000 ;
+; A[12]      ; D[4]        ; 61.000 ;        ;        ; 61.000 ;
+; A[12]      ; D[5]        ; 61.000 ;        ;        ; 61.000 ;
+; A[12]      ; D[6]        ; 61.000 ;        ;        ; 61.000 ;
+; A[12]      ; D[7]        ; 61.000 ;        ;        ; 61.000 ;
+; A[12]      ; nINH        ;        ; 28.000 ; 28.000 ;        ;
+; A[13]      ; D[0]        ; 61.000 ;        ;        ; 61.000 ;
+; A[13]      ; D[1]        ; 61.000 ;        ;        ; 61.000 ;
+; A[13]      ; D[2]        ; 61.000 ;        ;        ; 61.000 ;
+; A[13]      ; D[3]        ; 61.000 ;        ;        ; 61.000 ;
+; A[13]      ; D[4]        ; 61.000 ;        ;        ; 61.000 ;
+; A[13]      ; D[5]        ; 61.000 ;        ;        ; 61.000 ;
+; A[13]      ; D[6]        ; 61.000 ;        ;        ; 61.000 ;
+; A[13]      ; D[7]        ; 61.000 ;        ;        ; 61.000 ;
+; A[13]      ; nINH        ;        ; 28.000 ; 28.000 ;        ;
+; A[14]      ; D[0]        ;        ; 61.000 ; 61.000 ;        ;
+; A[14]      ; D[1]        ;        ; 61.000 ; 61.000 ;        ;
+; A[14]      ; D[2]        ;        ; 61.000 ; 61.000 ;        ;
+; A[14]      ; D[3]        ;        ; 61.000 ; 61.000 ;        ;
+; A[14]      ; D[4]        ;        ; 61.000 ; 61.000 ;        ;
+; A[14]      ; D[5]        ;        ; 61.000 ; 61.000 ;        ;
+; A[14]      ; D[6]        ;        ; 61.000 ; 61.000 ;        ;
+; A[14]      ; D[7]        ;        ; 61.000 ; 61.000 ;        ;
+; A[14]      ; nINH        ; 28.000 ;        ;        ; 28.000 ;
+; A[15]      ; D[0]        ;        ; 61.000 ; 61.000 ;        ;
+; A[15]      ; D[1]        ;        ; 61.000 ; 61.000 ;        ;
+; A[15]      ; D[2]        ;        ; 61.000 ; 61.000 ;        ;
+; A[15]      ; D[3]        ;        ; 61.000 ; 61.000 ;        ;
+; A[15]      ; D[4]        ;        ; 61.000 ; 61.000 ;        ;
+; A[15]      ; D[5]        ;        ; 61.000 ; 61.000 ;        ;
+; A[15]      ; D[6]        ;        ; 61.000 ; 61.000 ;        ;
+; A[15]      ; D[7]        ;        ; 61.000 ; 61.000 ;        ;
+; A[15]      ; nINH        ; 28.000 ;        ;        ; 28.000 ;
+; PHI0in     ; D[0]        ; 39.000 ;        ;        ; 39.000 ;
+; PHI0in     ; D[1]        ; 39.000 ;        ;        ; 39.000 ;
+; PHI0in     ; D[2]        ; 39.000 ;        ;        ; 39.000 ;
+; PHI0in     ; D[3]        ; 39.000 ;        ;        ; 39.000 ;
+; PHI0in     ; D[4]        ; 39.000 ;        ;        ; 39.000 ;
+; PHI0in     ; D[5]        ; 39.000 ;        ;        ; 39.000 ;
+; PHI0in     ; D[6]        ; 39.000 ;        ;        ; 39.000 ;
+; PHI0in     ; D[7]        ; 39.000 ;        ;        ; 39.000 ;
+; Q3         ; T0          ; 32.000 ;        ;        ; 32.000 ;
+; Vbl0       ; nIRQ        ; 28.000 ;        ;        ; 28.000 ;
+; Vbl1       ; nIRQ        ;        ; 28.000 ; 28.000 ;        ;
+; nDEVSEL    ; D[0]        ;        ; 39.000 ; 39.000 ;        ;
+; nDEVSEL    ; D[1]        ;        ; 39.000 ; 39.000 ;        ;
+; nDEVSEL    ; D[2]        ;        ; 39.000 ; 39.000 ;        ;
+; nDEVSEL    ; D[3]        ;        ; 39.000 ; 39.000 ;        ;
+; nDEVSEL    ; D[4]        ;        ; 39.000 ; 39.000 ;        ;
+; nDEVSEL    ; D[5]        ;        ; 39.000 ; 39.000 ;        ;
+; nDEVSEL    ; D[6]        ;        ; 39.000 ; 39.000 ;        ;
+; nDEVSEL    ; D[7]        ;        ; 39.000 ; 39.000 ;        ;
+; nIOSEL     ; nRCS        ;        ; 32.000 ; 32.000 ;        ;
+; nIOSTRB    ; ROMA[11]    ;        ; 32.000 ; 32.000 ;        ;
+; nIOSTRB    ; ROMA[12]    ;        ; 32.000 ; 32.000 ;        ;
+; nIOSTRB    ; ROMA[13]    ;        ; 32.000 ; 32.000 ;        ;
+; nIOSTRB    ; ROMA[14]    ;        ; 32.000 ; 32.000 ;        ;
+; nIOSTRB    ; ROMA[15]    ;        ; 32.000 ; 32.000 ;        ;
+; nIOSTRB    ; nRCS        ;        ; 32.000 ; 32.000 ;        ;
+; nKMode     ; D[0]        ; 61.000 ;        ;        ; 61.000 ;
+; nKMode     ; D[1]        ; 61.000 ;        ;        ; 61.000 ;
+; nKMode     ; D[2]        ; 61.000 ;        ;        ; 61.000 ;
+; nKMode     ; D[3]        ; 61.000 ;        ;        ; 61.000 ;
+; nKMode     ; D[4]        ; 61.000 ;        ;        ; 61.000 ;
+; nKMode     ; D[5]        ; 61.000 ;        ;        ; 61.000 ;
+; nKMode     ; D[6]        ; 61.000 ;        ;        ; 61.000 ;
+; nKMode     ; D[7]        ; 61.000 ;        ;        ; 61.000 ;
+; nKMode     ; nINH        ;        ; 28.000 ; 28.000 ;        ;
+; nRES       ; D[0]        ; 39.000 ;        ;        ; 39.000 ;
+; nRES       ; D[1]        ; 39.000 ;        ;        ; 39.000 ;
+; nRES       ; D[2]        ; 39.000 ;        ;        ; 39.000 ;
+; nRES       ; D[3]        ; 39.000 ;        ;        ; 39.000 ;
+; nRES       ; D[4]        ; 39.000 ;        ;        ; 39.000 ;
+; nRES       ; D[5]        ; 39.000 ;        ;        ; 39.000 ;
+; nRES       ; D[6]        ; 39.000 ;        ;        ; 39.000 ;
+; nRES       ; D[7]        ; 39.000 ;        ;        ; 39.000 ;
+; nRES       ; nRIRQ       ;        ; 32.000 ; 32.000 ;        ;
+; nRRD       ; RAD[0]      ; 39.000 ;        ;        ; 39.000 ;
+; nRRD       ; RAD[1]      ; 39.000 ;        ;        ; 39.000 ;
+; nRRD       ; RAD[2]      ; 39.000 ;        ;        ; 39.000 ;
+; nRRD       ; RAD[3]      ; 39.000 ;        ;        ; 39.000 ;
+; nRRD       ; RAD[4]      ; 39.000 ;        ;        ; 39.000 ;
+; nRRD       ; RAD[5]      ; 39.000 ;        ;        ; 39.000 ;
+; nRRD       ; RAD[6]      ; 39.000 ;        ;        ; 39.000 ;
+; nRRD       ; RAD[7]      ; 39.000 ;        ;        ; 39.000 ;
+; nWE        ; D[0]        ; 39.000 ; 61.000 ; 61.000 ; 39.000 ;
+; nWE        ; D[1]        ; 39.000 ; 61.000 ; 61.000 ; 39.000 ;
+; nWE        ; D[2]        ; 39.000 ; 61.000 ; 61.000 ; 39.000 ;
+; nWE        ; D[3]        ; 39.000 ; 61.000 ; 61.000 ; 39.000 ;
+; nWE        ; D[4]        ; 39.000 ; 61.000 ; 61.000 ; 39.000 ;
+; nWE        ; D[5]        ; 39.000 ; 61.000 ; 61.000 ; 39.000 ;
+; nWE        ; D[6]        ; 39.000 ; 61.000 ; 61.000 ; 39.000 ;
+; nWE        ; D[7]        ; 39.000 ; 61.000 ; 61.000 ; 39.000 ;
+; nWE        ; nINH        ; 28.000 ;        ;        ; 28.000 ;
+; nWE        ; nROE        ;        ; 32.000 ; 32.000 ;        ;
++------------+-------------+--------+--------+--------+--------+
+
+
++--------------------------------------------------------------+
+; Minimum Propagation Delay                                    ;
++------------+-------------+--------+--------+--------+--------+
+; Input Port ; Output Port ; RR     ; RF     ; FR     ; FF     ;
++------------+-------------+--------+--------+--------+--------+
+; A[4]       ; D[0]        ; 61.000 ;        ;        ; 61.000 ;
+; A[4]       ; D[1]        ; 61.000 ;        ;        ; 61.000 ;
+; A[4]       ; D[2]        ; 61.000 ;        ;        ; 61.000 ;
+; A[4]       ; D[3]        ; 61.000 ;        ;        ; 61.000 ;
+; A[4]       ; D[4]        ; 61.000 ;        ;        ; 61.000 ;
+; A[4]       ; D[5]        ; 61.000 ;        ;        ; 61.000 ;
+; A[4]       ; D[6]        ; 61.000 ;        ;        ; 61.000 ;
+; A[4]       ; D[7]        ; 61.000 ;        ;        ; 61.000 ;
+; A[4]       ; nINH        ;        ; 28.000 ; 28.000 ;        ;
+; A[5]       ; D[0]        ; 61.000 ;        ;        ; 61.000 ;
+; A[5]       ; D[1]        ; 61.000 ;        ;        ; 61.000 ;
+; A[5]       ; D[2]        ; 61.000 ;        ;        ; 61.000 ;
+; A[5]       ; D[3]        ; 61.000 ;        ;        ; 61.000 ;
+; A[5]       ; D[4]        ; 61.000 ;        ;        ; 61.000 ;
+; A[5]       ; D[5]        ; 61.000 ;        ;        ; 61.000 ;
+; A[5]       ; D[6]        ; 61.000 ;        ;        ; 61.000 ;
+; A[5]       ; D[7]        ; 61.000 ;        ;        ; 61.000 ;
+; A[5]       ; nINH        ;        ; 28.000 ; 28.000 ;        ;
+; A[6]       ; D[0]        ; 61.000 ;        ;        ; 61.000 ;
+; A[6]       ; D[1]        ; 61.000 ;        ;        ; 61.000 ;
+; A[6]       ; D[2]        ; 61.000 ;        ;        ; 61.000 ;
+; A[6]       ; D[3]        ; 61.000 ;        ;        ; 61.000 ;
+; A[6]       ; D[4]        ; 61.000 ;        ;        ; 61.000 ;
+; A[6]       ; D[5]        ; 61.000 ;        ;        ; 61.000 ;
+; A[6]       ; D[6]        ; 61.000 ;        ;        ; 61.000 ;
+; A[6]       ; D[7]        ; 61.000 ;        ;        ; 61.000 ;
+; A[6]       ; nINH        ;        ; 28.000 ; 28.000 ;        ;
+; A[7]       ; D[0]        ; 61.000 ;        ;        ; 61.000 ;
+; A[7]       ; D[1]        ; 61.000 ;        ;        ; 61.000 ;
+; A[7]       ; D[2]        ; 61.000 ;        ;        ; 61.000 ;
+; A[7]       ; D[3]        ; 61.000 ;        ;        ; 61.000 ;
+; A[7]       ; D[4]        ; 61.000 ;        ;        ; 61.000 ;
+; A[7]       ; D[5]        ; 61.000 ;        ;        ; 61.000 ;
+; A[7]       ; D[6]        ; 61.000 ;        ;        ; 61.000 ;
+; A[7]       ; D[7]        ; 61.000 ;        ;        ; 61.000 ;
+; A[7]       ; nINH        ;        ; 28.000 ; 28.000 ;        ;
+; A[8]       ; D[0]        ; 61.000 ;        ;        ; 61.000 ;
+; A[8]       ; D[1]        ; 61.000 ;        ;        ; 61.000 ;
+; A[8]       ; D[2]        ; 61.000 ;        ;        ; 61.000 ;
+; A[8]       ; D[3]        ; 61.000 ;        ;        ; 61.000 ;
+; A[8]       ; D[4]        ; 61.000 ;        ;        ; 61.000 ;
+; A[8]       ; D[5]        ; 61.000 ;        ;        ; 61.000 ;
+; A[8]       ; D[6]        ; 61.000 ;        ;        ; 61.000 ;
+; A[8]       ; D[7]        ; 61.000 ;        ;        ; 61.000 ;
+; A[8]       ; nINH        ;        ; 28.000 ; 28.000 ;        ;
+; A[9]       ; D[0]        ; 61.000 ;        ;        ; 61.000 ;
+; A[9]       ; D[1]        ; 61.000 ;        ;        ; 61.000 ;
+; A[9]       ; D[2]        ; 61.000 ;        ;        ; 61.000 ;
+; A[9]       ; D[3]        ; 61.000 ;        ;        ; 61.000 ;
+; A[9]       ; D[4]        ; 61.000 ;        ;        ; 61.000 ;
+; A[9]       ; D[5]        ; 61.000 ;        ;        ; 61.000 ;
+; A[9]       ; D[6]        ; 61.000 ;        ;        ; 61.000 ;
+; A[9]       ; D[7]        ; 61.000 ;        ;        ; 61.000 ;
+; A[9]       ; nINH        ;        ; 28.000 ; 28.000 ;        ;
+; A[10]      ; D[0]        ; 61.000 ;        ;        ; 61.000 ;
+; A[10]      ; D[1]        ; 61.000 ;        ;        ; 61.000 ;
+; A[10]      ; D[2]        ; 61.000 ;        ;        ; 61.000 ;
+; A[10]      ; D[3]        ; 61.000 ;        ;        ; 61.000 ;
+; A[10]      ; D[4]        ; 61.000 ;        ;        ; 61.000 ;
+; A[10]      ; D[5]        ; 61.000 ;        ;        ; 61.000 ;
+; A[10]      ; D[6]        ; 61.000 ;        ;        ; 61.000 ;
+; A[10]      ; D[7]        ; 61.000 ;        ;        ; 61.000 ;
+; A[10]      ; nINH        ;        ; 28.000 ; 28.000 ;        ;
+; A[11]      ; D[0]        ; 61.000 ;        ;        ; 61.000 ;
+; A[11]      ; D[1]        ; 61.000 ;        ;        ; 61.000 ;
+; A[11]      ; D[2]        ; 61.000 ;        ;        ; 61.000 ;
+; A[11]      ; D[3]        ; 61.000 ;        ;        ; 61.000 ;
+; A[11]      ; D[4]        ; 61.000 ;        ;        ; 61.000 ;
+; A[11]      ; D[5]        ; 61.000 ;        ;        ; 61.000 ;
+; A[11]      ; D[6]        ; 61.000 ;        ;        ; 61.000 ;
+; A[11]      ; D[7]        ; 61.000 ;        ;        ; 61.000 ;
+; A[11]      ; nINH        ;        ; 28.000 ; 28.000 ;        ;
+; A[12]      ; D[0]        ; 61.000 ;        ;        ; 61.000 ;
+; A[12]      ; D[1]        ; 61.000 ;        ;        ; 61.000 ;
+; A[12]      ; D[2]        ; 61.000 ;        ;        ; 61.000 ;
+; A[12]      ; D[3]        ; 61.000 ;        ;        ; 61.000 ;
+; A[12]      ; D[4]        ; 61.000 ;        ;        ; 61.000 ;
+; A[12]      ; D[5]        ; 61.000 ;        ;        ; 61.000 ;
+; A[12]      ; D[6]        ; 61.000 ;        ;        ; 61.000 ;
+; A[12]      ; D[7]        ; 61.000 ;        ;        ; 61.000 ;
+; A[12]      ; nINH        ;        ; 28.000 ; 28.000 ;        ;
+; A[13]      ; D[0]        ; 61.000 ;        ;        ; 61.000 ;
+; A[13]      ; D[1]        ; 61.000 ;        ;        ; 61.000 ;
+; A[13]      ; D[2]        ; 61.000 ;        ;        ; 61.000 ;
+; A[13]      ; D[3]        ; 61.000 ;        ;        ; 61.000 ;
+; A[13]      ; D[4]        ; 61.000 ;        ;        ; 61.000 ;
+; A[13]      ; D[5]        ; 61.000 ;        ;        ; 61.000 ;
+; A[13]      ; D[6]        ; 61.000 ;        ;        ; 61.000 ;
+; A[13]      ; D[7]        ; 61.000 ;        ;        ; 61.000 ;
+; A[13]      ; nINH        ;        ; 28.000 ; 28.000 ;        ;
+; A[14]      ; D[0]        ;        ; 61.000 ; 61.000 ;        ;
+; A[14]      ; D[1]        ;        ; 61.000 ; 61.000 ;        ;
+; A[14]      ; D[2]        ;        ; 61.000 ; 61.000 ;        ;
+; A[14]      ; D[3]        ;        ; 61.000 ; 61.000 ;        ;
+; A[14]      ; D[4]        ;        ; 61.000 ; 61.000 ;        ;
+; A[14]      ; D[5]        ;        ; 61.000 ; 61.000 ;        ;
+; A[14]      ; D[6]        ;        ; 61.000 ; 61.000 ;        ;
+; A[14]      ; D[7]        ;        ; 61.000 ; 61.000 ;        ;
+; A[14]      ; nINH        ; 28.000 ;        ;        ; 28.000 ;
+; A[15]      ; D[0]        ;        ; 61.000 ; 61.000 ;        ;
+; A[15]      ; D[1]        ;        ; 61.000 ; 61.000 ;        ;
+; A[15]      ; D[2]        ;        ; 61.000 ; 61.000 ;        ;
+; A[15]      ; D[3]        ;        ; 61.000 ; 61.000 ;        ;
+; A[15]      ; D[4]        ;        ; 61.000 ; 61.000 ;        ;
+; A[15]      ; D[5]        ;        ; 61.000 ; 61.000 ;        ;
+; A[15]      ; D[6]        ;        ; 61.000 ; 61.000 ;        ;
+; A[15]      ; D[7]        ;        ; 61.000 ; 61.000 ;        ;
+; A[15]      ; nINH        ; 28.000 ;        ;        ; 28.000 ;
+; PHI0in     ; D[0]        ; 39.000 ;        ;        ; 39.000 ;
+; PHI0in     ; D[1]        ; 39.000 ;        ;        ; 39.000 ;
+; PHI0in     ; D[2]        ; 39.000 ;        ;        ; 39.000 ;
+; PHI0in     ; D[3]        ; 39.000 ;        ;        ; 39.000 ;
+; PHI0in     ; D[4]        ; 39.000 ;        ;        ; 39.000 ;
+; PHI0in     ; D[5]        ; 39.000 ;        ;        ; 39.000 ;
+; PHI0in     ; D[6]        ; 39.000 ;        ;        ; 39.000 ;
+; PHI0in     ; D[7]        ; 39.000 ;        ;        ; 39.000 ;
+; Q3         ; T0          ; 32.000 ;        ;        ; 32.000 ;
+; Vbl0       ; nIRQ        ; 28.000 ;        ;        ; 28.000 ;
+; Vbl1       ; nIRQ        ;        ; 28.000 ; 28.000 ;        ;
+; nDEVSEL    ; D[0]        ;        ; 39.000 ; 39.000 ;        ;
+; nDEVSEL    ; D[1]        ;        ; 39.000 ; 39.000 ;        ;
+; nDEVSEL    ; D[2]        ;        ; 39.000 ; 39.000 ;        ;
+; nDEVSEL    ; D[3]        ;        ; 39.000 ; 39.000 ;        ;
+; nDEVSEL    ; D[4]        ;        ; 39.000 ; 39.000 ;        ;
+; nDEVSEL    ; D[5]        ;        ; 39.000 ; 39.000 ;        ;
+; nDEVSEL    ; D[6]        ;        ; 39.000 ; 39.000 ;        ;
+; nDEVSEL    ; D[7]        ;        ; 39.000 ; 39.000 ;        ;
+; nIOSEL     ; nRCS        ;        ; 32.000 ; 32.000 ;        ;
+; nIOSTRB    ; ROMA[11]    ;        ; 32.000 ; 32.000 ;        ;
+; nIOSTRB    ; ROMA[12]    ;        ; 32.000 ; 32.000 ;        ;
+; nIOSTRB    ; ROMA[13]    ;        ; 32.000 ; 32.000 ;        ;
+; nIOSTRB    ; ROMA[14]    ;        ; 32.000 ; 32.000 ;        ;
+; nIOSTRB    ; ROMA[15]    ;        ; 32.000 ; 32.000 ;        ;
+; nIOSTRB    ; nRCS        ;        ; 32.000 ; 32.000 ;        ;
+; nKMode     ; D[0]        ; 61.000 ;        ;        ; 61.000 ;
+; nKMode     ; D[1]        ; 61.000 ;        ;        ; 61.000 ;
+; nKMode     ; D[2]        ; 61.000 ;        ;        ; 61.000 ;
+; nKMode     ; D[3]        ; 61.000 ;        ;        ; 61.000 ;
+; nKMode     ; D[4]        ; 61.000 ;        ;        ; 61.000 ;
+; nKMode     ; D[5]        ; 61.000 ;        ;        ; 61.000 ;
+; nKMode     ; D[6]        ; 61.000 ;        ;        ; 61.000 ;
+; nKMode     ; D[7]        ; 61.000 ;        ;        ; 61.000 ;
+; nKMode     ; nINH        ;        ; 28.000 ; 28.000 ;        ;
+; nRES       ; D[0]        ; 39.000 ;        ;        ; 39.000 ;
+; nRES       ; D[1]        ; 39.000 ;        ;        ; 39.000 ;
+; nRES       ; D[2]        ; 39.000 ;        ;        ; 39.000 ;
+; nRES       ; D[3]        ; 39.000 ;        ;        ; 39.000 ;
+; nRES       ; D[4]        ; 39.000 ;        ;        ; 39.000 ;
+; nRES       ; D[5]        ; 39.000 ;        ;        ; 39.000 ;
+; nRES       ; D[6]        ; 39.000 ;        ;        ; 39.000 ;
+; nRES       ; D[7]        ; 39.000 ;        ;        ; 39.000 ;
+; nRES       ; nRIRQ       ;        ; 32.000 ; 32.000 ;        ;
+; nRRD       ; RAD[0]      ; 39.000 ;        ;        ; 39.000 ;
+; nRRD       ; RAD[1]      ; 39.000 ;        ;        ; 39.000 ;
+; nRRD       ; RAD[2]      ; 39.000 ;        ;        ; 39.000 ;
+; nRRD       ; RAD[3]      ; 39.000 ;        ;        ; 39.000 ;
+; nRRD       ; RAD[4]      ; 39.000 ;        ;        ; 39.000 ;
+; nRRD       ; RAD[5]      ; 39.000 ;        ;        ; 39.000 ;
+; nRRD       ; RAD[6]      ; 39.000 ;        ;        ; 39.000 ;
+; nRRD       ; RAD[7]      ; 39.000 ;        ;        ; 39.000 ;
+; nWE        ; D[0]        ; 39.000 ; 61.000 ; 61.000 ; 39.000 ;
+; nWE        ; D[1]        ; 39.000 ; 61.000 ; 61.000 ; 39.000 ;
+; nWE        ; D[2]        ; 39.000 ; 61.000 ; 61.000 ; 39.000 ;
+; nWE        ; D[3]        ; 39.000 ; 61.000 ; 61.000 ; 39.000 ;
+; nWE        ; D[4]        ; 39.000 ; 61.000 ; 61.000 ; 39.000 ;
+; nWE        ; D[5]        ; 39.000 ; 61.000 ; 61.000 ; 39.000 ;
+; nWE        ; D[6]        ; 39.000 ; 61.000 ; 61.000 ; 39.000 ;
+; nWE        ; D[7]        ; 39.000 ; 61.000 ; 61.000 ; 39.000 ;
+; nWE        ; nINH        ; 28.000 ;        ;        ; 28.000 ;
+; nWE        ; nROE        ;        ; 32.000 ; 32.000 ;        ;
++------------+-------------+--------+--------+--------+--------+
+
+
++-----------------------------------------------------------------------+
+; Output Enable Times                                                   ;
++-----------+------------+--------+------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+------+------------+-----------------+
+; D[*]      ; C7M        ; 41.000 ;      ; Rise       ; C7M             ;
+;  D[0]     ; C7M        ; 41.000 ;      ; Rise       ; C7M             ;
+;  D[1]     ; C7M        ; 41.000 ;      ; Rise       ; C7M             ;
+;  D[2]     ; C7M        ; 41.000 ;      ; Rise       ; C7M             ;
+;  D[3]     ; C7M        ; 41.000 ;      ; Rise       ; C7M             ;
+;  D[4]     ; C7M        ; 41.000 ;      ; Rise       ; C7M             ;
+;  D[5]     ; C7M        ; 41.000 ;      ; Rise       ; C7M             ;
+;  D[6]     ; C7M        ; 41.000 ;      ; Rise       ; C7M             ;
+;  D[7]     ; C7M        ; 41.000 ;      ; Rise       ; C7M             ;
++-----------+------------+--------+------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Output Enable Times                                           ;
++-----------+------------+--------+------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+------+------------+-----------------+
+; D[*]      ; C7M        ; 41.000 ;      ; Rise       ; C7M             ;
+;  D[0]     ; C7M        ; 41.000 ;      ; Rise       ; C7M             ;
+;  D[1]     ; C7M        ; 41.000 ;      ; Rise       ; C7M             ;
+;  D[2]     ; C7M        ; 41.000 ;      ; Rise       ; C7M             ;
+;  D[3]     ; C7M        ; 41.000 ;      ; Rise       ; C7M             ;
+;  D[4]     ; C7M        ; 41.000 ;      ; Rise       ; C7M             ;
+;  D[5]     ; C7M        ; 41.000 ;      ; Rise       ; C7M             ;
+;  D[6]     ; C7M        ; 41.000 ;      ; Rise       ; C7M             ;
+;  D[7]     ; C7M        ; 41.000 ;      ; Rise       ; C7M             ;
++-----------+------------+--------+------+------------+-----------------+
+
+
++-------------------------------------------------------------------------------+
+; Output Disable Times                                                          ;
++-----------+------------+-----------+-----------+------------+-----------------+
+; Data Port ; Clock Port ; 0 to Hi-Z ; 1 to Hi-Z ; Clock Edge ; Clock Reference ;
++-----------+------------+-----------+-----------+------------+-----------------+
+; D[*]      ; C7M        ; 41.000    ;           ; Rise       ; C7M             ;
+;  D[0]     ; C7M        ; 41.000    ;           ; Rise       ; C7M             ;
+;  D[1]     ; C7M        ; 41.000    ;           ; Rise       ; C7M             ;
+;  D[2]     ; C7M        ; 41.000    ;           ; Rise       ; C7M             ;
+;  D[3]     ; C7M        ; 41.000    ;           ; Rise       ; C7M             ;
+;  D[4]     ; C7M        ; 41.000    ;           ; Rise       ; C7M             ;
+;  D[5]     ; C7M        ; 41.000    ;           ; Rise       ; C7M             ;
+;  D[6]     ; C7M        ; 41.000    ;           ; Rise       ; C7M             ;
+;  D[7]     ; C7M        ; 41.000    ;           ; Rise       ; C7M             ;
++-----------+------------+-----------+-----------+------------+-----------------+
+
+
++-------------------------------------------------------------------------------+
+; Minimum Output Disable Times                                                  ;
++-----------+------------+-----------+-----------+------------+-----------------+
+; Data Port ; Clock Port ; 0 to Hi-Z ; 1 to Hi-Z ; Clock Edge ; Clock Reference ;
++-----------+------------+-----------+-----------+------------+-----------------+
+; D[*]      ; C7M        ; 41.000    ;           ; Rise       ; C7M             ;
+;  D[0]     ; C7M        ; 41.000    ;           ; Rise       ; C7M             ;
+;  D[1]     ; C7M        ; 41.000    ;           ; Rise       ; C7M             ;
+;  D[2]     ; C7M        ; 41.000    ;           ; Rise       ; C7M             ;
+;  D[3]     ; C7M        ; 41.000    ;           ; Rise       ; C7M             ;
+;  D[4]     ; C7M        ; 41.000    ;           ; Rise       ; C7M             ;
+;  D[5]     ; C7M        ; 41.000    ;           ; Rise       ; C7M             ;
+;  D[6]     ; C7M        ; 41.000    ;           ; Rise       ; C7M             ;
+;  D[7]     ; C7M        ; 41.000    ;           ; Rise       ; C7M             ;
++-----------+------------+-----------+-----------+------------+-----------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; C7M        ; C7M      ; 324      ; 0        ; 0        ; 0        ;
+; nRALE      ; C7M      ; 0        ; 444      ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; C7M        ; C7M      ; 324      ; 0        ; 0        ; 0        ;
+; nRALE      ; C7M      ; 0        ; 444      ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 45    ; 45   ;
+; Unconstrained Input Port Paths  ; 687   ; 687  ;
+; Unconstrained Output Ports      ; 29    ; 29   ;
+; Unconstrained Output Port Paths ; 217   ; 217  ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 32-bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Sat Sep 07 20:44:36 2019
+Info: Command: quartus_sta Mouserial -c Mouserial
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (306004): Started post-fitting delay annotation
+Info (306005): Delay annotation completed successfully
+Warning (335095): TimeQuest Timing Analyzer does not support the analysis of latches as synchronous elements for the currently selected device family.
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'Mouserial.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name C7M C7M
+    Info (332105): create_clock -period 1.000 -name nRALE nRALE
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -54.500
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):   -54.500     -2897.000 C7M 
+Info (332146): Worst-case hold slack is 5.000
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     5.000         0.000 C7M 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -5.500
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -5.500       -44.000 nRALE 
+    Info (332119):    -4.500      -576.000 C7M 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 32-bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 259 megabytes
+    Info: Processing ended: Sat Sep 07 20:44:44 2019
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:08
+
+

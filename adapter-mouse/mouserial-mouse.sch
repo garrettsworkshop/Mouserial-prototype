@@ -94,7 +94,7 @@ U 1 1 5D328F12
 P 4100 4200
 F 0 "J1" H 4150 4517 50  0000 C CNN
 F 1 "Mouserial" H 4150 4426 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x08_P2.54mm_Vertical" H 4100 4200 50  0001 C CNN
+F 2 "stdpads:IDC_SMD_2x04_P2.54mm_Vertical" H 4100 4200 50  0001 C CNN
 F 3 "~" H 4100 4200 50  0001 C CNN
 	1    4100 4200
 	1    0    0    -1  

@@ -1,0 +1,35 @@
+main() {
+	set PORT and DDR bits appropriately
+	detect and initialize keyboard/mouse
+
+	while (1) {
+		service_mouse();
+		service_keyboard();
+	}
+}
+
+service_mouse() {
+	
+}
+
+int8_t read_a() {
+	disinhibit communication
+	for (uint8_t i = 0; i < )
+}
+
+int8_t write_a() {
+	resuqest to send
+	disinhibit communication
+}
+
+inline void service_fast_cmd() {
+	switch (cmd) {
+
+	}
+}
+
+void service_slow_cmd() {
+	switch (cmd) {
+
+	}
+}

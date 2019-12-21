@@ -14,8 +14,6 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text Notes 4300 1250 0    40   ~ 0
-S7
 Text Notes 1600 1400 2    50   ~ 0
 PHI0
 Wire Wire Line
@@ -27,23 +25,11 @@ Wire Wire Line
 Wire Wire Line
 	4450 1300 6550 1300
 Text Notes 1900 1250 0    40   ~ 0
-S3
-Text Notes 6700 1250 0    40   ~ 0
-S4
-Text Notes 6100 1250 0    40   ~ 0
-S3
-Text Notes 5500 1250 0    40   ~ 0
-S2
-Text Notes 4900 1250 0    40   ~ 0
-S1
-Text Notes 3700 1250 0    40   ~ 0
 S6
-Text Notes 3100 1250 0    40   ~ 0
-S5
+Text Notes 6100 1250 0    40   ~ 0
+S6
 Wire Wire Line
 	3500 1150 3800 1150
-Text Notes 2500 1250 0    40   ~ 0
-S4
 Wire Wire Line
 	2000 1250 2300 1250
 Wire Wire Line
@@ -109,19 +95,19 @@ Wire Wire Line
 Wire Wire Line
 	6500 1150 6800 1150
 Text Notes 8500 1250 0    40   ~ 0
-S7
+S3
 Wire Wire Line
 	6550 1300 6550 1400
 Wire Wire Line
 	6550 1400 8650 1400
 Text Notes 7900 1250 0    40   ~ 0
-S6
+S2
 Text Notes 7300 1250 0    40   ~ 0
-S5
+S1
 Wire Wire Line
 	7700 1150 8000 1150
 Text Notes 6700 1250 0    40   ~ 0
-S4
+S7
 Wire Wire Line
 	8000 1150 8000 1250
 Wire Wire Line
@@ -658,4 +644,16 @@ Text Notes 3650 5200 0    50   ~ 0
 R~CS~ = ~CSEN & (IOSEL | (IOSTRB & IOROMEN))~\nR~OE~ = ~R~W\n\nROMA[15:12] = Bank[4:1]\nROMA[11] = IOSEL ? 0 : Bank[0]\nD[7:0] = (~DEVSEL~ | ~CSEN~ | ~R~W | AVidSEL) ? 8’bZ :\n          ACmdStatusSEL ? {CmdDone, CmdRX, ArgRX, 5’h1F} :\n          AArgResSEL ? ArgRes[7:0] :\n          AVBlSEL ? (VBl ? 0x80 : 0x00)\n\nRAD[7:0] = ~RRD~ ? 8’bZ : RDR[7:0]\nRAR[7:0] = RAD[7:0] @ ALE\nRDR[7:0] = (RCmdStatSEL & ~S3~ & ~RDRSet~) ? Cmd[7:0] :\n            (RArgResSEL & ~S3~ & ~RDRSet~) ? ArgRes[7:0]\nRDRSet = ~ALE~ ? 0 : ~S3~ ? 1 : RDRSet\n
 Text Notes 8250 5950 0    50   ~ 0
 Commands to AVR:\n  FF: SW_RESET\n\n  E3: GET_IRQSTATE\n  E2: SET_MODE\n  E1: INIT_VBL\n  E0: INIT_MOUSE\n\n  C1: GO_CLEAR (pos)\n  C0: GO_HOME (pos)\n\n  83: SET_HI\n  82: SET_LO\n  81: GET_HI\n  80: GET_LO\n\n  53: SET_Y0 (clamp)\n  52: SET_Y1 (clamp)\n  51: SET_X0 (clamp)\n  50: SET_X1 (clamp)\n  41: SET_Y (pos)\n  40: SET_X (pos)\n\n  13: GET_Y0 (clamp)\n  12: GET_Y1 (clamp)\n  11: GET_X0 (clamp)\n  10: GET_X1 (clamp)\n  01: GET_Y (pos)\n  00: GET_X (pos)
+Text Notes 5500 1250 0    40   ~ 0
+S5
+Text Notes 4900 1250 0    40   ~ 0
+S4
+Text Notes 4300 1250 0    40   ~ 0
+S3
+Text Notes 3700 1250 0    40   ~ 0
+S2
+Text Notes 3100 1250 0    40   ~ 0
+S1
+Text Notes 2500 1250 0    40   ~ 0
+S7
 $EndSCHEMATC
